@@ -98,4 +98,6 @@ update djelatnik set ime = 'Štef' where sifra = 2;
 update posjeta set datumVrijemeDolaska = '2023-05-19 08:20' where sifra = 2;
 update operater set email = 'kresimir.katic1234@gmail.com' where lozinka = 1234;
 
-
+delete from dijeteposjeta where dijete = 2;
+delete from uslugaposjeta where usluga = 2;
+delete from posjeta where sifra = 1;
