@@ -94,4 +94,8 @@ insert into operater (sifra, email, ime, lozinka, oib, prezime) values
 (null, null, 'Mile', '4321', null, 'Horvat'),
 (null, null, 'Andrej', '0000', null, 'Šimić');
 
+update djelatnik set ime = 'Štef' where sifra = 2;
+update posjeta set datumVrijemeDolaska = '2023-05-19 08:20' where sifra = 2;
+update operater set email = 'kresimir.katic1234@gmail.com' where lozinka = 1234;
+
 
