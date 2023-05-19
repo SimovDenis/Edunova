@@ -58,3 +58,40 @@ alter table dijeteposjeta add foreign key (dijete) references dijete(sifra);
 alter table dijeteposjeta add foreign key (posjeta) references posjeta(sifra);
 alter table uslugaposjeta add foreign key (usluga) references usluga(sifra);
 alter table uslugaposjeta add foreign key (posjeta) references posjeta(sifra);
+
+insert into djelatnik (sifra, ime, iban, oib, prezime, radnoMjesto) values
+(null, 'Ivan', null, null, 'Majdenić', 'Domar'),
+(null, 'Ivan', null, null, 'Krunić', 'Kuhar'),
+(null, 'Martina', null, null, 'Kuček', 'Teta');
+
+insert into posjeta (sifra, datumVrijemeDolaska, datumVrijemeOdlaska, napomena, djelatnik_sifra) values
+(null, '2023-05-19 08', '2023-05-19 17:45', null, 1),
+(null, '2023-05-19 08:15', '2023-05-19 17', null, 2),
+(null, '2023-05-19 07:25', '2023-05-19 17:15', null, 3);
+
+insert into dijete (sifra, imeRoditelja, prezime, telefonRoditelja) values
+(null, 'Vedrana', 'Matić', null),
+(null, 'Uroš', 'Šikić', null),
+(null, 'Marijan', 'Ston', null);
+
+insert into usluga (sifra, cijena, jedinicaMjere, kolicina, naziv) values
+(null, 15, null, 2, 'Trampolin'),
+(null, 15, null, 2, 'Tobogan'),
+(null, 30, null, 1, 'Laser tag');
+
+insert into dijeteposjeta (dijete, posjeta) values
+(1, 3),
+(2, 1),
+(3, 2);
+
+insert into uslugaposjeta (usluga, posjeta) values
+(1, 2),
+(2, 1),
+(3, 3);
+
+insert into operater (sifra, email, ime, lozinka, oib, prezime) values
+(null, null, 'Krešimir', '1234', null, 'Katić'),
+(null, null, 'Mile', '4321', null, 'Horvat'),
+(null, null, 'Andrej', '0000', null, 'Šimić');
+
+
