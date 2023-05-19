@@ -47,4 +47,12 @@ create table osoba(
     prezime varchar(20)
 );
 
+alter table vozilo add foreign key (tvrtka) references tvrtka(sifra);
+alter table vozac add foreign key (vozilo) references vozilo(sifra);
+alter table vozac add foreign key (putnik) references putnik(sifra);
+alter table vozac add foreign key (osoba) references osoba(sifra);
+alter table putnik add foreign key (osoba) references osoba(sifra);
+alter table klijent add foreign key (putnik) references putnik(sifra);
+alter table klijent add foreign key (voznja) references voznja(sifra);
+
 
