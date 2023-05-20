@@ -90,4 +90,6 @@ insert into klijent (putnik, voznja) values
 (1, 1),
 (3, 3);
 
-
+update tvrtka set vlasnik = 'Vin Diesel' where sifra = 1;
+update putnik set osoba = 1 where sifra = 2;
+update voznja set ocjena = 2 where sifra = 3;
