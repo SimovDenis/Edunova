@@ -35,7 +35,7 @@ create table korisnik(
 
 create table segrt(
     sifra int not null primary key auto_increment,
-    osoba int,
+    osoba int not null,
     datum_pocetka_rada date,
     broj_ugovora varchar(20)
 );
@@ -46,5 +46,13 @@ create table osoba(
     prezime varchar(20),
     oib char(11)
 );
+
+alter table postolar add foreign key (osoba) references osoba(sifra);
+alter table popravak add foreign key (postolar) references postolar(sifra);
+alter table popravak add foreign key (segrt) references segrt(sifra);
+alter table popravak add foreign key (obuca) references obuca(sifra);
+alter table obuca add foreign key (korisnik) references korisnik(sifra);
+alter table korisnik add foreign key (osoba) references osoba(sifra);
+alter table segrt add foreign key (osoba) references osoba(sifra);
 
 
