@@ -89,4 +89,6 @@ update popravak set postolar = 2, segrt = null where sifra = 2;
 update osoba set oib = 87556981120 where sifra = 1;
 update segrt set datum_pocetka_rada = '2019-06-17' where sifra = 1;
 
-
+delete from popravak where obuca = 2;
+delete from obuca where sifra = 2;
+delete from korisnik where sifra = 1;
