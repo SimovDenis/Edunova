@@ -85,4 +85,8 @@ insert into popravak (sifra, vrsta_popravka, postolar, segrt, obuca, cijena) val
 (null, 'Krpanje', null, 2, 1, 18.45),
 (null, 'Zamjena konca na đonu', null, 3, 3, 10);
 
+update popravak set postolar = 2, segrt = null where sifra = 2;
+update osoba set oib = 87556981120 where sifra = 1;
+update segrt set datum_pocetka_rada = '2019-06-17' where sifra = 1;
+
 
