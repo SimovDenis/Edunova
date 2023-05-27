@@ -1,3 +1,5 @@
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < D:\GitHub\Edunova\Company_database.sql
+
 drop database if exists company_database;
 create database company_database;
 use company_database;
@@ -121,6 +123,7 @@ INSERT INTO works_with VALUES(107, 405, 26000);
 INSERT INTO works_with VALUES(102, 406, 15000);
 INSERT INTO works_with VALUES(105, 406, 130000);
 
+/*
 select employee.emp_id, employee.first_name, branch.branch_name 
 from employee
 join branch
@@ -137,3 +140,38 @@ where client.branch_id in (
 	select branch.branch_id from branch
 	where branch.mgr_id = 102
 );
+
+select 1;
+
+select emp_id, first_name, last_name from employee;
+
+select first_name, 'Zagreb' as grad from employee;
+
+select emp_id, now() as 'Date' from employee;
+
+select * from employee
+where emp_id <= 102;
+
+select * from employee
+where not (emp_id <= 102);
+
+select emp_id, first_name, last_name from employee
+where first_name like '%y';
+
+select sex,count(sex) from employee
+group by sex;
+
+select * from employee
+where emp_id 
+between 103 and 110;
+
+insert into employee (first_name, last_name) values
+('David', 'Michaels');
+
+select * from employee
+where first_name in ('David', 'Michael')
+or sex = 'F';
+
+select sex, avg(salary) from employee
+group by sex;
+*/
