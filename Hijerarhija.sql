@@ -18,4 +18,9 @@ insert into zaposlenik (sifra, ime, prezime, placa, nadredeni) values
 (102, 'Marin', 'Ivić', 9000, 101),
 (103, 'Artur', 'Skolnik', 8500, 101);
 
+update zaposlenik set placa = 9500
+where sifra = 101;
+
+
+
 
