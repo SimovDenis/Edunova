@@ -21,6 +21,7 @@ insert into zaposlenik (sifra, ime, prezime, placa, nadredeni) values
 update zaposlenik set placa = 9500
 where sifra = 101;
 
-
+delete from zaposlenik
+where sifra = 103;
 
 
