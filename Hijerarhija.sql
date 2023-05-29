@@ -11,3 +11,11 @@ create table zaposlenik(
 );
 
 alter table zaposlenik add foreign key (nadredeni) references zaposlenik(sifra);
+
+insert into zaposlenik (sifra, ime, prezime, placa, nadredeni) values
+(100, 'Ante', 'Gotovan', 10000, null),
+(101, 'Ante', 'Mirkotić', 9000, 100),
+(102, 'Marin', 'Ivić', 9000, 101),
+(103, 'Artur', 'Skolnik', 8500, 101);
+
+
