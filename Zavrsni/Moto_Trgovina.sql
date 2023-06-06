@@ -85,7 +85,7 @@ insert into operater(sifra, email, ime, lozinka, oib, prezime) values
 (null, 'alenko88@gmail.com', 'Alen', '3w%X99T', '26888060314', 'Čerenko');
 
 /*
-# koji djelatnik je posluzio kojeg kupce
+# koji djelatnik je posluzio koje kupce
 select concat(a.ime, ' ', a.prezime) as djelatnik, concat(c.ime, ' ', c.prezime) as kupac  
 from djelatnik a 
 inner join racun b on a.sifra = b.djelatnik
