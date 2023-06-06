@@ -83,3 +83,28 @@ insert into operater(sifra, email, ime, lozinka, oib, prezime) values
 (null, 'adrian122@gmail.com', 'Adrian', '27*ipW5', '01940408028', 'Haludek'),
 (null, 'stehpanyP@gmail.com', 'Stephany', 'wf86V3%', '37379019389', 'Podvorac'),
 (null, 'alenko88@gmail.com', 'Alen', '3w%X99T', '26888060314', 'Čerenko');
+
+/*
+# koji djelatnik je posluzio kojeg kupce
+select concat(a.ime, ' ', a.prezime) as djelatnik, concat(c.ime, ' ', c.prezime) as kupac  
+from djelatnik a 
+inner join racun b on a.sifra = b.djelatnik
+inner join kupac c on b.kupac = c.sifra;
+
+# sto je koji kupac kupio i kada
+select a.naziv as proizvod, concat(d.ime, ' ', d.prezime) as kupac, c.vrijeme_kupovine 
+from proizvod a
+inner join stavka b on a.sifra = b.proizvod
+inner join racun c on b.racun = c.sifra
+inner join kupac d on c.kupac = d.sifra;
+
+# koji je djelatnik prodao bmw
+select concat(a.ime, ' ', a.prezime) as djelatnik, d.naziv 
+from djelatnik a
+inner join racun b on a.sifra = b.djelatnik 
+inner join stavka c on b.sifra = c.racun 
+inner join proizvod d on c.proizvod = d.sifra
+where d.naziv like '%BMW%';
+*/
+
+
