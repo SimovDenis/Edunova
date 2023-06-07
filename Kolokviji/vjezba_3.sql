@@ -108,7 +108,8 @@ update svekar set suknja = 'Osijek';
 delete from punica where kratkamajica = 'AB';
 
 select a.majica
-from ostavljena a where a.lipa not in (9, 10, 20, 30, 35);
+from ostavljena a 
+where a.lipa not in (9, 10, 20, 30, 35);
 
 select a.ekstrovertno, f.vesta, e.kuna
 from brat a
