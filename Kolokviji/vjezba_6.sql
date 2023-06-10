@@ -106,4 +106,8 @@ update svekrva set suknja = 'Osijek';
 
 delete from decko where modelnaocala < 'AB';
 
+select narukvica
+from brat
+where treciputa is null;
+
 
