@@ -104,4 +104,6 @@ insert into zena(novcica, narukvica, dukserica, brat) values
 
 update svekrva set suknja = 'Osijek';
 
+delete from decko where modelnaocala < 'AB';
+
 
