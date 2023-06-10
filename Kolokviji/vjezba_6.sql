@@ -70,3 +70,36 @@ create table decko(
     zena int not null
 );
 
+alter table svekrva add foreign key (punac) references punac(sifra);
+alter table prijatelj_ostavljena add foreign key (prijatelj) references prijatelj(sifra);
+alter table prijatelj_ostavljena add foreign key (ostavljena) references ostavljena(sifra);
+alter table brat add foreign key (prijatelj) references prijatelj(sifra);
+alter table zena add foreign key (brat) references brat(sifra);
+alter table decko add foreign key (zena) references zena(sifra);
+
+insert into prijatelj(prstena) values
+(2),
+(68),
+(22);
+
+insert into ostavljena(prviputa, kratkamajica) values
+('2002-10-21', 'nova'),
+('2022-06-01', 'polo'),
+('1999-11-29', 'bijela');
+
+insert into prijatelj_ostavljena(prijatelj, ostavljena) values
+(1,1),
+(1,3),
+(1,2);
+
+insert into brat(nausnica, treciputa, narukvica) values
+(12, '1979-01-01', 1),
+(4, '2002-01-01', 44),
+(8, '1990-01-01', 98);
+
+insert into zena(novcica, narukvica, dukserica, brat) values
+(14.33, 5, 'plava', 1),
+(1678.31, 15, 'bijela', 2),
+(1444.33, 1, 'zimska', 3);
+
+
