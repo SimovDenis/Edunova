@@ -102,4 +102,6 @@ insert into zena(novcica, narukvica, dukserica, brat) values
 (1678.31, 15, 'bijela', 2),
 (1444.33, 1, 'zimska', 3);
 
+update svekrva set suknja = 'Osijek';
+
 
