@@ -88,7 +88,7 @@ insert into decko(treciputa, ogrlica, ekstrovertno) values
 insert into muskarac_decko(muskarac, decko) values
 (1, 1),
 (2, 3),
-(3, 2);
+(2, 2);
 
 insert into becar(prviputa, eura) values
 ('1928-11-01 19:32:33', 123.33),
