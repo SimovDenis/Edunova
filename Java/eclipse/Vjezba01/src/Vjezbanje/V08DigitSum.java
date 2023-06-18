@@ -2,6 +2,8 @@ package Vjezbanje;
 
 import javax.swing.JOptionPane;
 
+// Write a Java program and compute the sum of an integer's digits.
+
 public class V08DigitSum {
 
 	public static void main(String[] args) {
