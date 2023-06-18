@@ -8,7 +8,7 @@ public class Z03 {
 		String grad = JOptionPane.showInputDialog("Unesi grad iz kojeg dolaziš");
 		int godine = Integer.parseInt(JOptionPane.showInputDialog("Unesi svoje godine"));
 		
-		System.out.println("Imam " + godine + "g i dolazim iz mjesta " + grad + ".");
+		System.out.println("Imam " + godine + "g i dolazim iz mjesta " + grad + "!");
 
 	}
 
