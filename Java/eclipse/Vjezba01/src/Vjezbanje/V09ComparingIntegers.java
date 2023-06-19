@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 // Write a Java program to compare two numbers.
 
-public class VO9ComparingIntegers {
+public class V09ComparingIntegers {
 
 	public static void main(String[] args) {
 		
