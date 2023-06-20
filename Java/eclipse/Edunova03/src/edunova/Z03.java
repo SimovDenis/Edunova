@@ -12,19 +12,19 @@ public class Z03 {
 		String mjesto = JOptionPane.showInputDialog("Unesi mjesto za provjeru županije");
 
 		switch (mjesto) {
-		
+
 		case "Osijek":
 			System.out.println("Osječko-baranjska županija");
 			break;
-			
+
 		case "Požega":
 			System.out.println("Požeško-slavonska županija");
 			break;
-			
+
 		case "Virovitica":
 			System.out.println("Virovitičko-podravska županija");
 			break;
-			
+
 		case "Vukovar":
 			System.out.println("Vukovarsko-srijemska županija");
 
