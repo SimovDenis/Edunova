@@ -15,6 +15,13 @@ public class Z01 {
 		int drugi = Integer.parseInt(JOptionPane.showInputDialog("Unesi drugi broj"));
 		int zbroj = 0;
 
+		if (prvi > drugi) {
+			int zamjenski = prvi;
+			prvi = drugi;
+			drugi = zamjenski;
+
+		}
+
 		for (int i = prvi; i <= drugi; i++) {
 			if (i % 2 != 0) {
 				System.out.println("Zbroj neparnog broja: " + i);
