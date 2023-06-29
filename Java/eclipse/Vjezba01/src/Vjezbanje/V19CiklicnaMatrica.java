@@ -21,27 +21,48 @@ public class V19CiklicnaMatrica {
 		int redmax = red;
 		int stupacmax = stupac;
 
-		while () {
+		while (b <= red * stupac) {
+
 			for (int i = stupacmin; i <= stupacmax; i++) {
-				matrica[red - redmin][stupac - i] = b++;
+				if (b > red * stupac) {
+					break;
+				} else {
+					matrica[red - redmin][stupac - i] = b++;
+				}
+
 			}
 
 			redmin++;
 
 			for (int i = red - redmin; i >= red - redmax; i--) {
-				matrica[i][stupac - stupacmax] = b++;
+
+				if (b > red * stupac) {
+					break;
+				} else {
+					matrica[i][stupac - stupacmax] = b++;
+				}
 			}
 
 			stupacmax--;
 
 			for (int i = stupacmin; i <= stupac - stupacmin; i++) {
-				matrica[red - redmax][i] = b++;
+
+				if (b > red * stupac) {
+					break;
+				} else {
+					matrica[red - redmax][i] = b++;
+				}
 			}
 
 			redmax--;
 
 			for (int i = red - redmax; i <= red - redmin; i++) {
-				matrica[i][stupac - stupacmin] = b++;
+
+				if (b > red * stupac) {
+					break;
+				} else {
+					matrica[i][stupac - stupacmin] = b++;
+				}
 			}
 
 			stupacmin++;
