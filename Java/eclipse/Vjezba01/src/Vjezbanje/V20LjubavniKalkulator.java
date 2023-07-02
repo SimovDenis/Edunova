@@ -8,8 +8,8 @@ public class V20LjubavniKalkulator {
 
 	public static void main(String[] args) {
 
-		String osoba1 = JOptionPane.showInputDialog("Unesi svoje ime");
-		String osoba2 = JOptionPane.showInputDialog("Unesi ime svoje simpatije");
+		String osoba1 = JOptionPane.showInputDialog("Unesi svoje ime").toLowerCase();
+		String osoba2 = JOptionPane.showInputDialog("Unesi ime svoje simpatije").toLowerCase();
 
 		char[] os1 = osoba1.toCharArray();
 		char[] os2 = osoba2.toCharArray();
@@ -53,6 +53,37 @@ public class V20LjubavniKalkulator {
 
 		System.out.println(Arrays.toString(broj1));
 		System.out.println(Arrays.toString(broj2));
+
+		int veci = broj1.length > broj2.length ? broj1.length : broj2.length;
+
+		// Zbroj matrica osobe 1 i osobe 2
+		int[] zbrojMatrica = new int[veci];
+
+		for (int i = 0; i < zbrojMatrica.length; i++) {
+			if (broj1.length > i) {
+				zbrojMatrica[i] += broj1[i];
+			}
+
+			if (broj2.length > i) {
+				zbrojMatrica[zbrojMatrica.length - 1 - i] += broj2[i];
+			}
+
+		}
+
+		System.out.println(Arrays.toString(zbrojMatrica));
+
+		// Zbroj konačne matrice
+		int[] zbroj = new int[zbrojMatrica.length];
+
+		for (int i = 0; i < zbrojMatrica.length; i++) {
+
+			if (i < zbrojMatrica.length - 1 - i) {
+				zbroj[i] = zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i];
+			}
+
+		}
+
+		System.out.println(Arrays.toString(zbroj));
 
 	}
 
