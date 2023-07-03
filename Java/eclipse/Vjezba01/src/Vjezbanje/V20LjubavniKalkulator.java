@@ -14,38 +14,41 @@ public class V20LjubavniKalkulator {
 		char[] os1 = osoba1.toCharArray();
 		char[] os2 = osoba2.toCharArray();
 
-		int[] broj1 = new int[os1.length];
-		int[] broj2 = new int[os2.length];
+		char[] manja = os1.length < os2.length ? os1 : os2;
+		char[] veca = os1.length > os2.length ? os1 : os2;
+
+		int[] broj1 = new int[manja.length];
+		int[] broj2 = new int[veca.length];
 
 		// za prvu osobu
-		for (int i = 0; i <= os1.length - 1; i++) {
-			for (int j = 0; j <= os1.length - 1; j++) {
-				if (osoba1.charAt(i) == os1[j]) {
+		for (int i = 0; i <= manja.length - 1; i++) {
+			for (int j = 0; j <= manja.length - 1; j++) {
+				if (manja[i] == manja[j]) {
 					broj1[i] = broj1[i] + 1;
 				}
 			}
 		}
 
-		for (int i = 0; i <= os1.length - 1; i++) {
-			for (int j = 0; j <= os2.length - 1; j++) {
-				if (osoba1.charAt(i) == os2[j]) {
+		for (int i = 0; i <= manja.length - 1; i++) {
+			for (int j = 0; j <= veca.length - 1; j++) {
+				if (manja[i] == veca[j]) {
 					broj1[i] = broj1[i] + 1;
 				}
 			}
 		}
 
 		// za drugu osobu
-		for (int i = 0; i <= os2.length - 1; i++) {
-			for (int j = 0; j <= os2.length - 1; j++) {
-				if (osoba2.charAt(i) == os2[j]) {
+		for (int i = 0; i <= veca.length - 1; i++) {
+			for (int j = 0; j <= veca.length - 1; j++) {
+				if (veca[i] == veca[j]) {
 					broj2[i] = broj2[i] + 1;
 				}
 			}
 		}
 
-		for (int i = 0; i <= os2.length - 1; i++) {
-			for (int j = 0; j <= os1.length - 1; j++) {
-				if (osoba2.charAt(i) == os1[j]) {
+		for (int i = 0; i <= veca.length - 1; i++) {
+			for (int j = 0; j <= manja.length - 1; j++) {
+				if (veca[i] == manja[j]) {
 					broj2[i] = broj2[i] + 1;
 				}
 			}
@@ -54,10 +57,8 @@ public class V20LjubavniKalkulator {
 		System.out.println(Arrays.toString(broj1));
 		System.out.println(Arrays.toString(broj2));
 
-		int veci = broj1.length > broj2.length ? broj1.length : broj2.length;
-
 		// Zbroj matrica osobe 1 i osobe 2
-		int[] zbrojMatrica = new int[veci];
+		int[] zbrojMatrica = new int[broj2.length];
 
 		for (int i = 0; i < zbrojMatrica.length; i++) {
 			if (broj1.length > i) {
@@ -73,17 +74,44 @@ public class V20LjubavniKalkulator {
 		System.out.println(Arrays.toString(zbrojMatrica));
 
 		// Zbroj konačne matrice
-		int[] zbroj = new int[zbrojMatrica.length];
+		if (zbrojMatrica.length % 2 == 0) {
+			int[] zbroj = new int[zbrojMatrica.length / 2];
 
-		for (int i = 0; i < zbrojMatrica.length; i++) {
+			for (int i = 0; i < zbrojMatrica.length; i++) {
 
-			if (i < zbrojMatrica.length - 1 - i) {
-				zbroj[i] = zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i];
+				if (zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i] >= 10) {
+
+				}
+
+				if (i < zbrojMatrica.length - 1 - i) {
+					zbroj[i] = zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i];
+				}
+
 			}
+
+			System.out.println(Arrays.toString(zbroj));
 
 		}
 
-		System.out.println(Arrays.toString(zbroj));
+		if (zbrojMatrica.length % 2 == 1) {
+			int[] zbroj = new int[(zbrojMatrica.length / 2) + 1];
+
+			for (int i = 0; i < zbrojMatrica.length; i++) {
+
+				if (i < zbrojMatrica.length - 1 - i) {
+
+					zbroj[i] = zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i];
+				}
+
+				if (zbrojMatrica[i] == zbrojMatrica[zbrojMatrica.length - 1 - i]) {
+					zbroj[i] = zbrojMatrica[i];
+				}
+
+			}
+
+			System.out.println(Arrays.toString(zbroj));
+
+		}
 
 	}
 
