@@ -79,10 +79,6 @@ public class V20LjubavniKalkulator {
 
 			for (int i = 0; i < zbrojMatrica.length; i++) {
 
-				if (zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i] >= 10) {
-
-				}
-
 				if (i < zbrojMatrica.length - 1 - i) {
 					zbroj[i] = zbrojMatrica[i] + zbrojMatrica[zbrojMatrica.length - 1 - i];
 				}
