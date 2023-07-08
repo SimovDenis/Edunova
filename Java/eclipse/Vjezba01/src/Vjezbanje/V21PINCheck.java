@@ -18,14 +18,14 @@ public class V21PINCheck {
 			int check = Integer.parseInt(JOptionPane.showInputDialog("Please enter pin"));
 
 			if (check == pin) {
-				System.out.println("Correct, welcome back");
+				System.out.println("Correct, welcome back!");
 				break;
 			} else if (check != pin && i < 2) {
-				System.out.println("Incorrect, try again");
+				System.out.println("Incorrect, try again.");
 			}
 
 			if (i == 2) {
-				System.out.println("Sorry but you have been locked out");
+				System.out.println("Sorry but you have been locked out!");
 			}
 
 		}
