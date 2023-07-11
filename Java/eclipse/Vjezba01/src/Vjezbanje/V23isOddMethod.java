@@ -13,7 +13,7 @@ public class V23isOddMethod {
 
 		int number = Integer.parseInt(JOptionPane.showInputDialog("Enter a number"));
 
-		if (isOdd(number) == true) {
+		if (isOdd(number)) {
 			System.out.println(number + " is an odd number");
 		} else {
 			System.out.println(number + " is an even number");

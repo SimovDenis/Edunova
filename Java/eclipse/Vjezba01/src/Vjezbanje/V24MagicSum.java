@@ -22,7 +22,7 @@ public class V24MagicSum {
 			if (number == -1) {
 				break;
 			}
-			if (hasEight(number) == true) {
+			if (hasEight(number)) {
 				sum += number;
 			}
 		}

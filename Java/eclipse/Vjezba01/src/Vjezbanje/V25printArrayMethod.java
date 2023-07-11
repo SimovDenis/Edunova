@@ -35,7 +35,7 @@ public class V25printArrayMethod {
 
 	private static void print(ArrayList<Integer> array) {
 
-		if (array.isEmpty() == true) {
+		if (array.isEmpty()) {
 			System.out.println("Your array is empty");
 		} else if (array.size() == 1) {
 			System.out.println(array.get(0));
