@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class Izbornik {
 
 	private ObradaDjelatnik obradadjelatnik;
+	private ObradaKupac obradakupac;
 
 	public Izbornik() {
 		obradadjelatnik = new ObradaDjelatnik();
+		obradakupac = new ObradaKupac();
 		Pomocno.ulaz = new Scanner(System.in);
 		pozdravnaPoruka();
 		prikaziIzbornik();
@@ -42,7 +44,7 @@ public class Izbornik {
 			break;
 
 		case 2:
-			System.out.println("Kupci");
+			obradakupac.prikaziIzbornik();
 			prikaziIzbornik();
 			break;
 
