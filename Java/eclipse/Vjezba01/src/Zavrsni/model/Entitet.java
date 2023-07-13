@@ -3,6 +3,15 @@ package Zavrsni.model;
 public abstract class Entitet {
 
 	private int sifra;
+	
+	public Entitet(int sifra) {
+		super();
+		this.sifra = sifra;
+	}
+
+	public Entitet() {
+
+	}
 
 	public int getSifra() {
 		return sifra;
@@ -12,12 +21,5 @@ public abstract class Entitet {
 		this.sifra = sifra;
 	}
 
-	public Entitet(int sifra) {
-		super();
-		this.sifra = sifra;
-	}
 
-	public Entitet() {
-
-	}
 }
