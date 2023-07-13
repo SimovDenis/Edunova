@@ -1,17 +1,21 @@
 package edunova.model;
 
 public abstract class Entitet {
-
-	private int sifra;
-
+	
 	public Entitet() {
-
+		
 	}
-
+	
+	
+	
 	public Entitet(int sifra) {
 		super();
 		this.sifra = sifra;
 	}
+
+
+
+	private int sifra;
 
 	public int getSifra() {
 		return sifra;

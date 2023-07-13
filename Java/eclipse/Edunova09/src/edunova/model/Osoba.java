@@ -1,13 +1,24 @@
 package edunova.model;
 
-public class Osoba extends Entitet {
+public abstract class Osoba extends Entitet {
 	
 	private String ime;
 	private String prezime;
 	private String oib;
 	private String email;
 	
+	public Osoba(){
+		
+	}
 	
+	
+	public Osoba(int sifra, String ime, String prezime, String oib, String email) {
+		super(sifra);
+		this.ime = ime;
+		this.prezime = prezime;
+		this.oib = oib;
+		this.email = email;
+	}
 	public String getIme() {
 		return ime;
 	}
