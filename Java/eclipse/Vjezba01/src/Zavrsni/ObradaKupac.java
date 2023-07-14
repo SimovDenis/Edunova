@@ -75,10 +75,10 @@ public class ObradaKupac {
 		pregledKupaca();
 		int index = Pomocno.unosBroja("Odaberi kupca za izmjenu", "Odabrani kupac ne postoji", 1, kupci.size());
 		Kupac k = kupci.get(index - 1);
-		k.setSifra(Pomocno.unosBroja("Unesi šifru kupca(trenutna šifra: " + k.getSifra() + ")", "Greška", 1, Integer.MAX_VALUE));
-		k.setIme(Pomocno.unosString("Unesi ime kupca(trenutno ime kupca: " + k.getIme() + ")", "Greška"));
-		k.setPrezime(Pomocno.unosString("Unesi ime kupca(trenutno prezime kupca: " + k.getPrezime() + ")", "Greška"));
-		k.setKontakt(Pomocno.unosString("Unesi ime kupca(trenutni kontakt kupca: " + k.getKontakt() + ")", "Greška"));
+		k.setSifra(Pomocno.unosBroja("Unesi šifru kupca(trenutna šifra: " + k.getSifra() + "): ", "Greška", 1, Integer.MAX_VALUE));
+		k.setIme(Pomocno.unosString("Unesi ime kupca(trenutno ime kupca: " + k.getIme() + "): ", "Greška"));
+		k.setPrezime(Pomocno.unosString("Unesi ime kupca(trenutno prezime kupca: " + k.getPrezime() + "): ", "Greška"));
+		k.setKontakt(Pomocno.unosString("Unesi ime kupca(trenutni kontakt kupca: " + k.getKontakt() + "): ", "Greška"));
 		
 		
 	}

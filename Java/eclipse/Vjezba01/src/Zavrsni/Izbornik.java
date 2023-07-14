@@ -6,10 +6,12 @@ public class Izbornik {
 
 	private ObradaDjelatnik obradadjelatnik;
 	private ObradaKupac obradakupac;
+	private ObradaProizvod obradaProizvod;
 
 	public Izbornik() {
 		obradadjelatnik = new ObradaDjelatnik();
 		obradakupac = new ObradaKupac();
+		obradaProizvod = new ObradaProizvod();
 		Pomocno.ulaz = new Scanner(System.in);
 		pozdravnaPoruka();
 		prikaziIzbornik();
@@ -36,7 +38,7 @@ public class Izbornik {
 
 	private void odabirStavkeIzbornika() {
 
-		switch (Pomocno.unosBroja("Odaberi željenu opciju", "Odabir mora biti 1-5", 1, 5)) {
+		switch (Pomocno.unosBroja("Odaberi željenu opciju: ", "Odabir mora biti 1-5", 1, 5)) {
 
 		case 1:
 			obradadjelatnik.prikaziIzbornik();
@@ -49,7 +51,7 @@ public class Izbornik {
 			break;
 
 		case 3:
-			System.out.println("Proizvodi");
+			obradaProizvod.prikaziIzbornik();
 			prikaziIzbornik();
 			break;
 

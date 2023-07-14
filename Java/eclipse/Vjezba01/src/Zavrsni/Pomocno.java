@@ -14,7 +14,7 @@ public class Pomocno {
 		while (true) {
 			try {
 
-				System.out.println(poruka);
+				System.out.print(poruka);
 				i = Integer.parseInt(ulaz.nextLine());
 				if (i >= min && i <= max) {
 					return i;
@@ -39,6 +39,25 @@ public class Pomocno {
 				return s;
 			}
 			System.out.println(greska);
+
+		}
+
+	}
+
+	public static double unosDouble(String poruka, String greska, double min, double max) {
+		double i;
+		while (true) {
+			try {
+				System.out.println(poruka);
+				i = Double.parseDouble(ulaz.nextLine());
+				if (i >= min && i < max) {
+					return i;
+				}
+				System.out.println(greska);
+
+			} catch (Exception e) {
+				System.out.println(greska);
+			}
 
 		}
 
