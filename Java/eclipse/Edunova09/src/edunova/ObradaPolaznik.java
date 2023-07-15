@@ -13,7 +13,6 @@ public class ObradaPolaznik {
 	
 	public List<Polaznik> getPolaznici() {
 		return polaznici;
-		
 	}
 
 	public ObradaPolaznik() {

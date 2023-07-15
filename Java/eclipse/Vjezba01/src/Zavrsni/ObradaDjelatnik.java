@@ -9,6 +9,10 @@ public class ObradaDjelatnik {
 
 	private List<Djelatnik> djelatnici;
 
+	public List<Djelatnik> getDjelatnici() {
+		return djelatnici;
+	}
+
 	public ObradaDjelatnik() {
 		djelatnici = new ArrayList<>();
 		if (Pomocno.dev) {
@@ -20,7 +24,7 @@ public class ObradaDjelatnik {
 		djelatnici.add(new Djelatnik(1, "Matija", "Ivić", "5433/2020", "HR7023600004786996737", "031/662-884"));
 		djelatnici.add(new Djelatnik(2, "Andreja", "Gan", "2490/2019", "HR5624020067519674536", "099 455 8900"));
 		djelatnici.add(new Djelatnik(3, "Ingrid", "Jurić", "1227/2014", "HR6925000091988982169", "ijuric88@gmail.com"));
-		
+
 	}
 
 	public void prikaziIzbornik() {
@@ -51,7 +55,7 @@ public class ObradaDjelatnik {
 			izmjenaDjelatnika();
 			prikaziIzbornik();
 			break;
-			
+
 		case 4:
 			brisanjeDjelatnika();
 			prikaziIzbornik();
@@ -67,7 +71,7 @@ public class ObradaDjelatnik {
 		pregledDjelatnika();
 		int index = Pomocno.unosBroja("Unesite šifru djelatnika kojeg želite obrisati: ", "Neispravna šifra", 1, djelatnici.size());
 		djelatnici.remove(index - 1);
-		
+
 	}
 
 	private void izmjenaDjelatnika() {
@@ -75,12 +79,11 @@ public class ObradaDjelatnik {
 		int index = Pomocno.unosBroja("Unesi šifru djelatnika kojeg želite izmjeniti: ", "Šifra nije dobra, pokušaj ponovno", 1, djelatnici.size());
 		Djelatnik d = djelatnici.get(index - 1);
 		d.setSifra(Pomocno.unosBroja("Unesi šifru djelatnika (trenutna šifra: " + d.getSifra() + "): ", "Greška", 1, Integer.MAX_VALUE));
-		d.setIme(Pomocno.unosString("Unesi ime djelatnika" + "(trenutno ime: " + d.getIme()  + "): ", "Ime obavezno"));
+		d.setIme(Pomocno.unosString("Unesi ime djelatnika" + "(trenutno ime: " + d.getIme() + "): ", "Ime obavezno"));
 		d.setPrezime(Pomocno.unosString("Unesi prezime djelatnika(trenutno prezime: " + d.getPrezime() + "): ", "Obavezno unijeti prezime"));
 		d.setBrojUgovora(Pomocno.unosString("Unesi broj ugovora djelatnika(trenutni broj ugovora: " + d.getBrojUgovora() + "): ", "Obavezno unijeti broj ugovora"));
 		d.setIban(Pomocno.unosString("Unesi iban djelatnika(trenutni iban: " + d.getIban() + "): ", "Obavezno unijeti iban djelatnika"));
 		d.setKontakt(Pomocno.unosString("Unesi kontakt djelatnika(trenutni kontakt: " + d.getKontakt() + "): ", "Obavezno unijeti kontakt"));
-
 	}
 
 	private void unosDjelatnika() {
@@ -110,7 +113,7 @@ public class ObradaDjelatnik {
 			System.out.println(b++ + ". " + d.getIme() + " " + d.getPrezime());
 
 		}
-		
+
 		System.out.println("----------------------");
 
 	}

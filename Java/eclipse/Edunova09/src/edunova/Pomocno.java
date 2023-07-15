@@ -9,8 +9,8 @@ public class Pomocno {
 	public static Scanner ulaz;
 	public static boolean dev;
 	// https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
-	private static final String FORMAT_DATUMA="dd. MM. yyyy.";
-	private static SimpleDateFormat df = new SimpleDateFormat(FORMAT_DATUMA);
+	public static final String FORMAT_DATUMA="dd. MM. yyyy.";
+	public static SimpleDateFormat df = new SimpleDateFormat(FORMAT_DATUMA);
 
 	public static int unosRasponBroja(String poruka, String greska, int min, int max) {
 		int i;

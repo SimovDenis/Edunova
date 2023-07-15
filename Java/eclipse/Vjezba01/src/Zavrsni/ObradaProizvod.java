@@ -9,6 +9,10 @@ public class ObradaProizvod {
 
 	private List<Proizvod> proizvodi;
 
+	public List<Proizvod> getProizvodi() {
+		return proizvodi;
+	}
+
 	public ObradaProizvod() {
 		proizvodi = new ArrayList<>();
 		if (Pomocno.dev) {
@@ -45,16 +49,16 @@ public class ObradaProizvod {
 			unosProizvoda();
 			prikaziIzbornik();
 			break;
-			
+
 		case 3:
 			izmjenaProizvoda();
 			prikaziIzbornik();
 			break;
-			
+
 		case 4:
 			brisanjeProizvoda();
 			prikaziIzbornik();
-			break;	
+			break;
 
 		case 5:
 			break;
@@ -67,18 +71,18 @@ public class ObradaProizvod {
 		pregledProizvoda();
 		int index = Pomocno.unosBroja("Odaberi proizvod za brisanje: ", "Greška", 1, proizvodi.size());
 		proizvodi.remove(index - 1);
-		
+
 	}
 
 	private void izmjenaProizvoda() {
 		pregledProizvoda();
 		int index = Pomocno.unosBroja("Odaberi proizvod za izmjenu: ", "Greška", 1, proizvodi.size());
 		Proizvod p = proizvodi.get(index - 1);
-		p.setSifra(Pomocno.unosBroja("Unesi šifru proizvoda(trenutna šifra: " + p.getSifra() + "): ", "Greška", 1, Integer.MAX_VALUE));
-		p.setNaziv(Pomocno.unosString("Unesi naziv proizvoda(trenutni naziv proizvoda: " + p.getNaziv() + "): ", "Greška"));
-		p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda(trenutna cijena proizvoda: " + p.getCijena() + "): ", "Greška", 1, Double.MAX_VALUE));
-		p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije(trenutno trajanje garnacije: " + p.getGarancija() + "): ", "Greška", 0, Double.MAX_VALUE));
-		
+		p.setSifra(Pomocno.unosBroja("Unesi šifru proizvoda(trenutna šifra: " + p.getSifra() + "): ", "Greška", 1,Integer.MAX_VALUE));
+		p.setNaziv(Pomocno.unosString("Unesi naziv proizvoda(trenutni naziv proizvoda: " + p.getNaziv() + "): ","Greška"));
+		p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda(trenutna cijena proizvoda: " + p.getCijena() + "): ","Greška", 1, Double.MAX_VALUE));
+		p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije(trenutno trajanje garnacije: " + p.getGarancija() + "): ", "Greška",0,Double.MAX_VALUE));
+
 	}
 
 	private void unosProizvoda() {
@@ -88,7 +92,7 @@ public class ObradaProizvod {
 		p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda: ", "Greška", 1, Double.MAX_VALUE));
 		p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije: ", "Greška", 0, Double.MAX_VALUE));
 		proizvodi.add(p);
-		
+
 	}
 
 	private void pregledProizvoda() {
@@ -107,7 +111,5 @@ public class ObradaProizvod {
 		System.out.println("---------------------");
 
 	}
-
-	
 
 }

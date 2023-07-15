@@ -1,11 +1,15 @@
 package Zavrsni;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Pomocno {
 
 	public static Scanner ulaz;
 	public static boolean dev;
+	private static final String FORMAT_DATUMA = "dd.MM.yyyy.";
+	private static SimpleDateFormat df = new SimpleDateFormat(FORMAT_DATUMA);
 
 	public static int unosBroja(String poruka, String greska, int min, int max) {
 
@@ -62,4 +66,27 @@ public class Pomocno {
 		}
 
 	}
+	
+	public static Date unosDatuma(String poruka) {
+		while(true) {
+			System.out.println(poruka);
+			try {
+				return df.parse(ulaz.nextLine());
+			} catch (Exception e) {
+				System.out.println("Datum unijeti na slijedeći način u formatu dd.mm.yyyy. npr. " + df.format(new Date()));
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
