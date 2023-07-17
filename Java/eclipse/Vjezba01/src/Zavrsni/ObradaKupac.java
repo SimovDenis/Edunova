@@ -97,7 +97,7 @@ public class ObradaKupac {
 
 	}
 
-	private void pregledKupaca() {
+	public void pregledKupaca() {
 		System.out.println("-----------------");
 		System.out.println("----- Kupci -----");
 		System.out.println("-----------------");

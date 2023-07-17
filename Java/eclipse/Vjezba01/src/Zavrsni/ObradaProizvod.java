@@ -95,7 +95,7 @@ public class ObradaProizvod {
 
 	}
 
-	private void pregledProizvoda() {
+	public void pregledProizvoda() {
 		System.out.println("---------------------");
 		System.out.println("----- Proizvodi -----");
 		System.out.println("---------------------");

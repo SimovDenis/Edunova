@@ -139,7 +139,7 @@ public class ObradaGrupa {
 
 	private void brisanjeGrupa() {
 		pregledGrupa();
-		int index = Pomocno.unosRasponBroja("Odaberi redni broj grupaa: ","Nije dobar odabir",1,grupe.size());
+		int index = Pomocno.unosRasponBroja("Odaberi redni broj grupe: ","Nije dobar odabir",1,grupe.size());
 		grupe.remove(index-1);
 		
 	}

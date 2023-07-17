@@ -99,7 +99,7 @@ public class ObradaDjelatnik {
 
 	}
 
-	private void pregledDjelatnika() {
+	public void pregledDjelatnika() {
 		System.out.println("----------------------");
 		System.out.println("----- Djelatnici -----");
 		System.out.println("----------------------");

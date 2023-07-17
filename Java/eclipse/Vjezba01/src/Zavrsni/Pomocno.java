@@ -66,27 +66,22 @@ public class Pomocno {
 		}
 
 	}
-	
+
 	public static Date unosDatuma(String poruka) {
-		while(true) {
+		while (true) {
 			System.out.println(poruka);
 			try {
 				return df.parse(ulaz.nextLine());
 			} catch (Exception e) {
-				System.out.println("Datum unijeti na slijedeći način u formatu dd.mm.yyyy. npr. " + df.format(new Date()));
+				System.out.println(
+						"Datum unijeti na slijedeći način u formatu dd.mm.yyyy. npr. " + df.format(new Date()));
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public static boolean unosBoolean(String poruka) {
+		System.out.println(poruka);
+		return ulaz.nextLine().trim().toLowerCase().equals("da") ? true : false;
+	}
+
 }
