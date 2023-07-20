@@ -9,7 +9,7 @@ public class Pomocno {
 	public static Scanner ulaz;
 	public static boolean dev;
 	// https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
-	public static final String FORMAT_DATUMA="dd. MM. yyyy.";
+	public static final String FORMAT_DATUMA = "dd. MM. yyyy.";
 	public static SimpleDateFormat df = new SimpleDateFormat(FORMAT_DATUMA);
 
 	public static int unosRasponBroja(String poruka, String greska, int min, int max) {
@@ -59,14 +59,15 @@ public class Pomocno {
 		return ulaz.nextLine().trim().toLowerCase().equals("da") ? true : false;
 
 	}
-	
+
 	public static Date unosDatum(String poruka) {
 		while (true) {
 			try {
 				System.out.print(poruka);
 				return df.parse(ulaz.nextLine());
 			} catch (Exception e) {
-				System.out.println("Obavezan unos datuma u formatu " + FORMAT_DATUMA + ", npr. " + df.format(new Date()) + " za danas.");
+				System.out.println("Obavezan unos datuma u formatu " + FORMAT_DATUMA + ", npr. " + df.format(new Date())
+						+ " za danas.");
 			}
 		}
 

@@ -87,7 +87,7 @@ public class ObradaGrupa {
 		int indexGrupe = Pomocno.unosRasponBroja("Odaberi grupu iz koje želiš obrisati polaznika: ", "Greška", 1, grupe.size());
 		Grupa g = grupe.get(indexGrupe - 1);
 		if(g.getPolaznici().isEmpty()) {
-			System.out.println("\nTrenutno nema niti jednog polaznika u grupi");
+			System.out.println("\n*** Trenutno nema niti jednog polaznika u grupi ***");
 		} else {
 			System.out.println("----------------------------");
 			System.out.println("---- Trenutni polaznici ----");
@@ -105,7 +105,7 @@ public class ObradaGrupa {
 
 	private void pregledGrupa() {
 		System.out.println("------------------");
-		System.out.println("---- Grupe ----");
+		System.out.println("----- Grupe -----");
 		System.out.println("------------------");
 		int b=1;
 		for(Grupa g : grupe) {
@@ -157,40 +157,41 @@ public class ObradaGrupa {
 	}
 
 	private void promjenaGrupa() {
-		if(grupe.isEmpty()) {
-			System.out.println("\nTrenutno nije unesena niti jedna grupa");
-		} else {
-			pregledGrupa();
-			int index = Pomocno.unosRasponBroja("Odaberi redni broj grupe: ","Nije dobar odabir",1,grupe.size());
-			Grupa g = grupe.get(index-1);
-			g.setSifra(Pomocno.unosRasponBroja("Unesi šifru grupe (" + g.getSifra() + "): " ,"Pozitivan broj",
-					1,Integer.MAX_VALUE));
-			g.setNaziv(Pomocno.unosString("Unesi naziv grupe (" + g.getNaziv() + "): ","Naziv obavezan"));
-			g.setMaxpolaznika(Pomocno.unosRasponBroja("Unesi maksimalno polaznika grupe: ","Pozitivan broj (5-25)",
-					5,25));
-			System.out.println("Trenutni smjer: " + g.getSmjer().getNaziv());
-			g.setSmjer(postaviSmjer());
-			System.out.println("Trenutni predavač: " + g.getPredavac());
-			g.setPredavac(postaviPredavaca());
-			g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka"));
-			System.out.println("----------------------------");
-			System.out.println("---- Trenutni polaznici ----");
-			System.out.println("----------------------------");
-			int b=1;
-			for(Polaznik p : g.getPolaznici()) {
-				System.out.println(b++ + ". " + p);
+		boolean upit = Pomocno.unosBoolean("Jeste li sigurni da želite promijeniti jednu od grupa? (da za nastavak ili bilo što za odustajanje)");
+		if (upit) {
+			if(grupe.isEmpty()) {
+				System.out.println("\nTrenutno nije unesena niti jedna grupa");
+			} else {
+				pregledGrupa();
+				int index = Pomocno.unosRasponBroja("Odaberi redni broj grupe: ","Nije dobar odabir",1,grupe.size());
+				Grupa g = grupe.get(index-1);
+				g.setSifra(Pomocno.unosRasponBroja("Unesi šifru grupe (" + g.getSifra() + "): " ,"Pozitivan broj",
+						1,Integer.MAX_VALUE));
+				g.setNaziv(Pomocno.unosString("Unesi naziv grupe (" + g.getNaziv() + "): ","Naziv obavezan"));
+				g.setMaxpolaznika(Pomocno.unosRasponBroja("Unesi maksimalno polaznika grupe: ","Pozitivan broj (5-25)",
+						5,25));
+				System.out.println("Trenutni smjer: " + g.getSmjer().getNaziv());
+				g.setSmjer(postaviSmjer());
+				System.out.println("Trenutni predavač: " + g.getPredavac());
+				g.setPredavac(postaviPredavaca());
+				g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka"));
+				System.out.println("----------------------------");
+				System.out.println("---- Trenutni polaznici ----");
+				System.out.println("----------------------------");
+				int b=1;
+				for(Polaznik p : g.getPolaznici()) {
+					System.out.println(b++ + ". " + p);
+				}
+				System.out.println("-------------------");
+				g.setPolaznici(postaviPolaznike());
 			}
-			System.out.println("-------------------");
-			g.setPolaznici(postaviPolaznike());
 		}
-
-		
 	}
 
 
 	private void brisanjeGrupa() {
 		if(grupe.isEmpty()) {
-			System.out.println("\nTrenutno nije unesena niti jedna grupa");
+			System.out.println("\n*** Trenutno nije unesena niti jedna grupa ***");
 		} else {
 			pregledGrupa();
 			int index = Pomocno.unosRasponBroja("Odaberi redni broj grupe: ","Nije dobar odabir",1,grupe.size());
