@@ -74,20 +74,7 @@ public class ObradaSmjer {
 
 	private void dodavanjeSmjera() {
 		Smjer s = new Smjer();
-		boolean provjera = true;
-		
-		int sifra = Pomocno.unosRasponBroja("Unesi šifru smjera: ", "Greška", 1, Integer.MAX_VALUE);		
-		for(int i = 0; i < smjerovi.size(); i++) {
-			if (smjerovi.get(i).getSifra() == sifra) {
-				System.out.println("Šifra " + sifra + " već postoji. Unesite drugu šifru.");
-				provjera = false;
-			} 
-		}
-		if(provjera) {
-			s.setSifra(sifra);
-		}
-		
-		
+		s.setSifra(Pomocno.unosSifreSmjera(smjerovi));
 		s.setNaziv(Pomocno.unosString("Unesi naziv smjera: ", "Naziv obavezan"));
 		s.setTrajanje(Pomocno.unosRasponBroja("Unesi trajanje smjera: ", "Broj između 30 i 360", 30, 360));
 		s.setCijena(Pomocno.unosFloat("Unesi cijenu smjera (. za decimalni dio): ", "Greška kod unosa"));
@@ -98,28 +85,40 @@ public class ObradaSmjer {
 	}
 
 	private void promjenaSmjera() {
-		pregledSmjerova();
-		int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ", "Nije dobar odabir", 1, smjerovi.size());
-		Smjer s = smjerovi.get(index - 1);
-		s.setSifra(Pomocno.unosRasponBroja("Unesi šifru smjera (" + s.getSifra() + "): ", "Pozitivan broj", 1,
-				Integer.MAX_VALUE));
-		s.setNaziv(Pomocno.unosString("Unesi naziv smjera (" + s.getNaziv() + "): ", "Naziv obavezan"));
-		s.setTrajanje(Pomocno.unosRasponBroja("Unesi trajanje smjera (" + s.getTrajanje() + "): ",
-				"Broj između 30 i 360", 30, 360));
-		s.setCijena(Pomocno.unosFloat("Unesi cijenu smjera (. za decimalni dio) (" + s.getCijena() + "): ",
-				"Greška kod unosa"));
-		s.setUpisnina(Pomocno.unosFloat("Unesi upisninu smjera (. za decimalni dio) (" + s.getUpisnina() + "): ",
-				"Greška kod unosa"));
-		s.setVerificiran(Pomocno.unosBoolean(
-				"Smjer verificiran (da) ili bilo što drugo za ne (" + (s.isVerificiran() ? "da" : "ne") + "): "));
-
+		boolean upit = Pomocno.unosBoolean(
+				"Jeste li sigurni da želite promijeniti jedan od smjerova? (da za nastavak ili bilo što za odustajanje): ");
+		if (upit) {
+			if (smjerovi.isEmpty()) {
+				System.out.println("\n*** Trenutno nije unesen niti jedan smjer ***");
+			} else {
+				pregledSmjerova();
+				int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ", "Nije dobar odabir", 1, smjerovi.size());
+				Smjer s = smjerovi.get(index - 1);
+				s.setSifra(Pomocno.unosSifreSmjera(smjerovi));
+				s.setNaziv(Pomocno.unosString("Unesi naziv smjera (" + s.getNaziv() + "): ", "Naziv obavezan"));
+				s.setTrajanje(Pomocno.unosRasponBroja("Unesi trajanje smjera (" + s.getTrajanje() + "): ",
+						"Broj između 30 i 360", 30, 360));
+				s.setCijena(Pomocno.unosFloat("Unesi cijenu smjera (. za decimalni dio) (" + s.getCijena() + "): ",
+						"Greška kod unosa"));
+				s.setUpisnina(Pomocno.unosFloat("Unesi upisninu smjera (. za decimalni dio) (" + s.getUpisnina() + "): ",
+						"Greška kod unosa"));
+				s.setVerificiran(Pomocno.unosBoolean(
+						"Smjer verificiran (da) ili bilo što drugo za ne (" + (s.isVerificiran() ? "da" : "ne") + "): "));
+			}
+		}		
 	}
 
 	private void brisanjeSmjera() {
-		pregledSmjerova();
-		int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ", "Nije dobar odabir", 1, smjerovi.size());
-		smjerovi.remove(index - 1);
-
+		boolean upit = Pomocno.unosBoolean(
+				"Jeste li sigurni da želite obrisati jedan od smjerova? (da za nastavak ili bilo što za odustajanje): ");
+		if (upit) {
+			if (smjerovi.isEmpty()) {
+				System.out.println("\n*** Trenutno nije unesen niti jedan smjer ***");
+			} else {
+				pregledSmjerova();
+				int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ", "Nije dobar odabir", 1, smjerovi.size());
+				smjerovi.remove(index - 1);
+			}
+		}
 	}
-
 }

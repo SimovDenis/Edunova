@@ -75,8 +75,7 @@ public class ObradaPredavac {
 
 	private void dodavanjePredavaca() {
 		Predavac p = new Predavac();
-		p.setSifra(Pomocno.unosRasponBroja("Unesi šifru smjera: ","Pozitivan broj",
-				1,Integer.MAX_VALUE));
+		p.setSifra(Pomocno.unosSifrePredavac(predavaci));
 		p.setIme(Pomocno.unosString("Unesi ime predavaca: ","Ime obavezno"));
 		p.setPrezime(Pomocno.unosString("Unesi prezime predavaca: ", "Prezime obavezno"));
 		p.setEmail(Pomocno.unosString("Unesi email predavaca: ","Email obavezno"));
@@ -88,23 +87,36 @@ public class ObradaPredavac {
 	
 	
 	private void promjenaPredavaca() {
-		pregledPredavaca();
-		int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ","Nije dobar odabir",1,predavaci.size());
-		Predavac p = predavaci.get(index-1);
-		p.setSifra(Pomocno.unosRasponBroja("Unesi šifru smjera (" + p.getSifra() + "): " ,"Pozitivan broj",
-				1,Integer.MAX_VALUE));
-		p.setIme(Pomocno.unosString("Unesi ime predavaca (" + p.getIme() + ")","Ime obavezno"));
-		p.setPrezime(Pomocno.unosString("Unesi prezime predavaca (" + p.getPrezime() + "): ", "Prezime obavezno"));
-		p.setEmail(Pomocno.unosString("Unesi email predavaca (" + p.getEmail() + "): ","Email obavezno"));
-		p.setOib(Pomocno.unosString("Unesi OIB predavaca (" + p.getOib() + "): ","OIB obavezno"));
-		p.setIban(Pomocno.unosString("Unesi IBAN predavaca (" + p.getIban() + "): ","IBAN obavezno obavezno"));
+		boolean upit = Pomocno.unosBoolean(
+				"Jeste li sigurni da želite promijeniti jednog od predavača? (da za nastavak ili bilo što za odustajanje): ");
+		if (upit) {
+			if (predavaci.isEmpty()) {
+				System.out.println("\n*** Trenutno nije unesen niti jedan predavač ***");
+			} else {
+				pregledPredavaca();
+				int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ","Nije dobar odabir",1,predavaci.size());
+				Predavac p = predavaci.get(index-1);
+				p.setSifra(Pomocno.unosSifrePredavac(predavaci));
+				p.setIme(Pomocno.unosString("Unesi ime predavaca (" + p.getIme() + ")","Ime obavezno"));
+				p.setPrezime(Pomocno.unosString("Unesi prezime predavaca (" + p.getPrezime() + "): ", "Prezime obavezno"));
+				p.setEmail(Pomocno.unosString("Unesi email predavaca (" + p.getEmail() + "): ","Email obavezno"));
+				p.setOib(Pomocno.unosString("Unesi OIB predavaca (" + p.getOib() + "): ","OIB obavezno"));
+				p.setIban(Pomocno.unosString("Unesi IBAN predavaca (" + p.getIban() + "): ","IBAN obavezno obavezno"));
+			}
+		}
 	}
 	
 	private void brisanjePredavaca() {
-		pregledPredavaca();
-		int index = Pomocno.unosRasponBroja("Odaberi redni broj predavača: ","Nije dobar odabir",1,predavaci.size());
-		predavaci.remove(index-1);
-		
+		boolean upit = Pomocno.unosBoolean(
+				"Jeste li sigurni da želite obrisati jednog od predavača? (da za nastavak ili bilo što za odustajanje): ");
+		if (upit) {
+			if (predavaci.isEmpty()) {
+				System.out.println("\n*** Trenutno nije unesen niti jedan predavač ***");
+			} else {
+				pregledPredavaca();
+				int index = Pomocno.unosRasponBroja("Odaberi redni broj predavača: ","Nije dobar odabir",1,predavaci.size());
+				predavaci.remove(index-1);
+			}				
+		}
 	}
-
 }
