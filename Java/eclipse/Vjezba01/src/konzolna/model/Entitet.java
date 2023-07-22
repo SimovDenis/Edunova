@@ -1,4 +1,4 @@
-package Zavrsni.model;
+package konzolna.model;
 
 public abstract class Entitet {
 

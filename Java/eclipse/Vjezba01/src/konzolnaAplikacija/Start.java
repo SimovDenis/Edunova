@@ -1,4 +1,4 @@
-package Zavrsni;
+package konzolnaAplikacija;
 
 public class Start {
 	

@@ -1,4 +1,4 @@
-package Zavrsni;
+package konzolnaAplikacija;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,9 +1,9 @@
-package Zavrsni;
+package konzolnaAplikacija;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Zavrsni.model.Djelatnik;
+import konzolna.model.Djelatnik;
 
 public class ObradaDjelatnik {
 

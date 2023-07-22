@@ -1,12 +1,12 @@
-package Zavrsni;
+package konzolnaAplikacija;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Zavrsni.model.Djelatnik;
-import Zavrsni.model.Kupac;
-import Zavrsni.model.Proizvod;
-import Zavrsni.model.Racun;
+import konzolna.model.Djelatnik;
+import konzolna.model.Kupac;
+import konzolna.model.Proizvod;
+import konzolna.model.Racun;
 
 public class ObradaRacun {
 

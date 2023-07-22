@@ -1,9 +1,9 @@
-package Zavrsni;
+package konzolnaAplikacija;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Zavrsni.model.Proizvod;
+import konzolna.model.Proizvod;
 
 public class ObradaProizvod {
 

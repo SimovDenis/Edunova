@@ -1,4 +1,4 @@
-package Zavrsni.model;
+package konzolna.model;
 
 import java.util.Date;
 import java.util.List;
