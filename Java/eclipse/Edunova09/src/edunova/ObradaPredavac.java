@@ -97,7 +97,7 @@ public class ObradaPredavac {
 				int index = Pomocno.unosRasponBroja("Odaberi redni broj smjera: ","Nije dobar odabir",1,predavaci.size());
 				Predavac p = predavaci.get(index-1);
 				p.setSifra(Pomocno.unosSifrePredavac(predavaci));
-				p.setIme(Pomocno.unosString("Unesi ime predavaca (" + p.getIme() + ")","Ime obavezno"));
+				p.setIme(Pomocno.unosString("Unesi ime predavaca (" + p.getIme() + "): ","Ime obavezno"));
 				p.setPrezime(Pomocno.unosString("Unesi prezime predavaca (" + p.getPrezime() + "): ", "Prezime obavezno"));
 				p.setEmail(Pomocno.unosString("Unesi email predavaca (" + p.getEmail() + "): ","Email obavezno"));
 				p.setOib(Pomocno.unosString("Unesi OIB predavaca (" + p.getOib() + "): ","OIB obavezno"));
