@@ -12,7 +12,20 @@ public class Grupa extends Entitet{
 	private Date datumPocetka;
 	private List<Polaznik> polaznici;
 	
+	public Grupa(int sifra, String naziv, Smjer smjer, int maxpolaznika, Predavac predavac, Date datumPocetka,
+			List<Polaznik> polaznici) {
+		super(sifra);
+		this.naziv = naziv;
+		this.smjer = smjer;
+		this.maxpolaznika = maxpolaznika;
+		this.predavac = predavac;
+		this.datumPocetka = datumPocetka;
+		this.polaznici = polaznici;
+	}
 	
+	public Grupa() {
+		super();
+	}
 	
 	public String getNaziv() {
 		return naziv;

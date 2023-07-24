@@ -76,6 +76,10 @@ public class Izbornik {
 	public ObradaPredavac getObradaPredavac() {
 		return obradaPredavac;
 	}
+
+	public ObradaGrupa getObradaGrupa() {
+		return obradaGrupa;
+	}
 	
 	
 

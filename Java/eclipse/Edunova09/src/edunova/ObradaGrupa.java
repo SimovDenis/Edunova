@@ -12,15 +12,29 @@ public class ObradaGrupa {
 
 	private List<Grupa> grupe;
 	private Izbornik izbornik;
+	private ObradaStatistika obradaStatistika;
+	
+	public List<Grupa> getGrupe() {
+		return grupe;
+	}
 
 	public ObradaGrupa(Izbornik izbornik) {
 		this();
 		this.izbornik = izbornik;
+		obradaStatistika = new ObradaStatistika(this);
+		
 	}
 
 	public ObradaGrupa() {
 		grupe = new ArrayList<>();
+//		if(Pomocno.dev) {
+//			testniPodaci();
+//		}
 	}
+
+//	private void testniPodaci() {
+//		grupe.add(new Grupa(1, "JP28", izbornik.getObradaSmjer().getSmjerovi().get(0), 25, null, null, izbornik.getObradaPolaznik().getPolaznici()));
+//	}
 
 	public void prikaziIzbornik() {
 		System.out.println("\nGrupa izbornik");
@@ -28,7 +42,8 @@ public class ObradaGrupa {
 		System.out.println("2. Unos nove grupe");
 		System.out.println("3. Promjena postojeće grupe");
 		System.out.println("4. Brisanje postojeće grupe ili polaznika u grupi");
-		System.out.println("5. Povratak na prethodni izbornik");
+		System.out.println("5. Statistika");
+		System.out.println("6. Povratak na prethodni izbornik");
 		ucitajStavkuIzbornika();
 	}
 
@@ -50,8 +65,13 @@ public class ObradaGrupa {
 			izbornikBrisanje();
 			prikaziIzbornik();
 			break;
-
+			
 		case 5:
+			obradaStatistika.prikaziIzbornik();
+			prikaziIzbornik();
+			break;
+
+		case 6:
 			break;
 		}
 	}
@@ -107,7 +127,7 @@ public class ObradaGrupa {
 
 	}
 
-	private void pregledGrupa() {
+	public void pregledGrupa() {
 		System.out.println("------------------");
 		System.out.println("----- Grupe -----");
 		System.out.println("------------------");
