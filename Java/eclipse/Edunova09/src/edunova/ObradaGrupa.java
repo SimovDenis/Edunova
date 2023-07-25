@@ -22,8 +22,6 @@ public class ObradaGrupa {
 		this();		
 		this.izbornik = izbornik;
 		obradaStatistika = new ObradaStatistika(this);
-		
-		
 	}
 
 	public ObradaGrupa() {
@@ -124,26 +122,29 @@ public class ObradaGrupa {
 	}
 
 	public void pregledGrupa() {
-		System.out.println("------------------");
-		System.out.println("----- Grupe -----");
-		System.out.println("------------------");
-		int b = 1;
-		for (Grupa g : grupe) {
-			System.out.println(b++ + ". " + g.getNaziv());
+		if (grupe.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesena niti jedna grupa ***");
+		} else {
+			System.out.println("------------------");
+			System.out.println("----- Grupe -----");
+			System.out.println("------------------");
+			int b = 1;
+			for (Grupa g : grupe) {
+				System.out.println(b++ + ". " + g.getNaziv());
+			}
+			System.out.println("------------------");
 		}
-		System.out.println("------------------");
-
 	}
 
 	private void dodavanjeGrupa() {
 		Grupa g = new Grupa();
-		g.setSifra(Pomocno.unosSifreGrupe(grupe));
+//		g.setSifra(Pomocno.unosSifreGrupe(grupe));
 		g.setNaziv(Pomocno.unosString("Unesi naziv grupe: ", "Naziv obavezan"));
-		g.setSmjer(postaviSmjer());
-		g.setMaxpolaznika(
-				Pomocno.unosRasponBroja("Unesi maksimalno polaznika grupe: ", "Pozitivan broj (5-25)", 5, 25));
-		g.setPredavac(postaviPredavaca());
-		g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka: "));
+//		g.setSmjer(postaviSmjer());
+//		g.setMaxpolaznika(
+//				Pomocno.unosRasponBroja("Unesi maksimalno polaznika grupe: ", "Pozitivan broj (5-25)", 5, 25));
+//		g.setPredavac(postaviPredavaca());
+//		g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka: "));
 		g.setPolaznici(postaviPolaznike());
 		grupe.add(g);
 

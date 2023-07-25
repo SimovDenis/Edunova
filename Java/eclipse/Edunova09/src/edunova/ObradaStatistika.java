@@ -4,11 +4,12 @@ import edunova.model.Grupa;
 
 public class ObradaStatistika {
 	
-	private ObradaGrupa obradaGrupa;	
+	private ObradaGrupa obradaGrupa;
+	
 
 	public ObradaStatistika(ObradaGrupa obradaGrupa) {
-		super();
-		this.obradaGrupa = obradaGrupa;
+	super();
+	this.obradaGrupa = obradaGrupa;
 	}
 
 	public ObradaStatistika() {
@@ -17,8 +18,8 @@ public class ObradaStatistika {
 
 	public void prikaziIzbornik() {
 		System.out.println("\nStatistika izbornik");
-		System.out.println("1. Ukupno polaznika na svim grupama");
-//		System.out.println("2. Prosječan broj polaznika u grupi");
+		System.out.println("1. Ukupno polaznika na grupi");
+		System.out.println("2. Prosječan broj polaznika u grupi");
 //		System.out.println("3. Ukupan iznos prihoda po smjerovima");
 //		System.out.println("4. Prosječan iznos prihoda po polazniku");
 //		System.out.println("5. Najraniji i najkasniji početak grupe uz ispis razlike broja dana između ta dva datuma");
@@ -33,17 +34,33 @@ public class ObradaStatistika {
 			prikaziIzbornik();
 			break;
 			
+//		case 2:
+//			prosjecnoPolaznika();
+//			prikaziIzbornik();
+//			break;
+			
 		case 6:
 			break;
 		}
 		
 	}
 
+//	private void prosjecnoPolaznika() {
+//		if (obradaGrupa.getGrupe().isEmpty()) {
+//			System.out.println("\n*** Trenutno nije unesena niti jedna grupa ***");
+//		} else {
+//			int brojGrupa = obradaGrupa.getGrupe().size();
+//			int brojPolanika = obradaPolaznik.getPolaznici().size();
+//			System.out.println("Prosječan broj polaznika po grupama je " + brojPolanika/brojGrupa);
+//		}
+//		
+//	}
+
 	private void ukupnoPolaznika() {
 		if (obradaGrupa.getGrupe().isEmpty()) {
 			System.out.println("\n*** Trenutno nije unesena niti jedna grupa ***");
 		} else {
-			System.out.println(odabirGrupe().getPolaznici().size());
+			System.out.println("\nTrenutno polaznika na odabranoj grupi je " + odabirGrupe().getPolaznici().size());
 		}
 		
 	}
