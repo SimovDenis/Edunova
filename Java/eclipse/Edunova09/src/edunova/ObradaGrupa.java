@@ -19,22 +19,18 @@ public class ObradaGrupa {
 	}
 
 	public ObradaGrupa(Izbornik izbornik) {
-		this();
+		this();		
 		this.izbornik = izbornik;
 		obradaStatistika = new ObradaStatistika(this);
+		
 		
 	}
 
 	public ObradaGrupa() {
 		grupe = new ArrayList<>();
-//		if(Pomocno.dev) {
-//			testniPodaci();
-//		}
 	}
 
-//	private void testniPodaci() {
-//		grupe.add(new Grupa(1, "JP28", izbornik.getObradaSmjer().getSmjerovi().get(0), 25, null, null, izbornik.getObradaPolaznik().getPolaznici()));
-//	}
+	
 
 	public void prikaziIzbornik() {
 		System.out.println("\nGrupa izbornik");
@@ -147,7 +143,7 @@ public class ObradaGrupa {
 		g.setMaxpolaznika(
 				Pomocno.unosRasponBroja("Unesi maksimalno polaznika grupe: ", "Pozitivan broj (5-25)", 5, 25));
 		g.setPredavac(postaviPredavaca());
-		g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka"));
+		g.setDatumPocetka(Pomocno.unosDatum("Unesi datum početka: "));
 		g.setPolaznici(postaviPolaznike());
 		grupe.add(g);
 

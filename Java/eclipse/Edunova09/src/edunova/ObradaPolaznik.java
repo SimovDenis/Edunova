@@ -26,7 +26,7 @@ public class ObradaPolaznik {
 	}
 
 	public void prikaziIzbornik() {
-		System.out.println("Polaznik izbornik");
+		System.out.println("\nPolaznik izbornik");
 		System.out.println("1. Pregled postojećih polaznika");
 		System.out.println("2. Unos novog polaznika");
 		System.out.println("3. Promjena postojećeg polaznika");

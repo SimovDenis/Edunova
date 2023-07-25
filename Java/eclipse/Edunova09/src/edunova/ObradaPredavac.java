@@ -28,7 +28,7 @@ public class ObradaPredavac {
 	}
 	
 	public void prikaziIzbornik() {
-		System.out.println("Predavac izbornik");
+		System.out.println("\nPredavac izbornik");
 		System.out.println("1. Pregled postojećih predavaca");
 		System.out.println("2. Unos novog predavaca");
 		System.out.println("3. Promjena postojećeg predavaca");
