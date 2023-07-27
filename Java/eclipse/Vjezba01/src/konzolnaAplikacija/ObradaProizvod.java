@@ -27,7 +27,7 @@ public class ObradaProizvod {
 	}
 
 	public void prikaziIzbornik() {
-		System.out.println("Izbornik proizvodi");
+		System.out.println("\nIzbornik proizvodi");
 		System.out.println("1. Prikaži proizvode");
 		System.out.println("2. Unesi novi proizvod");
 		System.out.println("3. Izmjeni postjeći proizvod");
@@ -68,26 +68,40 @@ public class ObradaProizvod {
 	}
 
 	private void brisanjeProizvoda() {
-		pregledProizvoda();
-		int index = Pomocno.unosBroja("Odaberi proizvod za brisanje: ", "Greška", 1, proizvodi.size());
-		proizvodi.remove(index - 1);
-
+		if (proizvodi.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan proizvod ***");
+		} else {
+			boolean upit = Pomocno.unosBoolean(
+					"Jeste li sigurni da želite obrisati proizvod? (da za nastavak ili bilo što za odustajanje): ");
+			if (upit) {
+				pregledProizvoda();
+				int index = Pomocno.unosBroja("Odaberi proizvod za brisanje: ", "Greška", 1, proizvodi.size());
+				proizvodi.remove(index - 1);
+			}
+		}				
 	}
 
 	private void izmjenaProizvoda() {
-		pregledProizvoda();
-		int index = Pomocno.unosBroja("Odaberi proizvod za izmjenu: ", "Greška", 1, proizvodi.size());
-		Proizvod p = proizvodi.get(index - 1);
-		p.setSifra(Pomocno.unosBroja("Unesi šifru proizvoda(trenutna šifra: " + p.getSifra() + "): ", "Greška", 1,Integer.MAX_VALUE));
-		p.setNaziv(Pomocno.unosString("Unesi naziv proizvoda(trenutni naziv proizvoda: " + p.getNaziv() + "): ","Greška"));
-		p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda(trenutna cijena proizvoda: " + p.getCijena() + "): ","Greška", 1, Double.MAX_VALUE));
-		p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije(trenutno trajanje garnacije: " + p.getGarancija() + "): ", "Greška",0,Double.MAX_VALUE));
-
+		if (proizvodi.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan proizvod ***");
+		} else {
+			boolean upit = Pomocno.unosBoolean(
+					"Jeste li sigurni da želite izmjeniti proizvod? (da za nastavak ili bilo što za odustajanje): ");
+			if (upit) {
+				pregledProizvoda();
+				int index = Pomocno.unosBroja("Odaberi proizvod za izmjenu: ", "Greška", 1, proizvodi.size());
+				Proizvod p = proizvodi.get(index - 1);
+				p.setSifra(Pomocno.unosSifreProizvoda(proizvodi));
+				p.setNaziv(Pomocno.unosString("Unesi naziv proizvoda(trenutni naziv proizvoda: " + p.getNaziv() + "): ","Greška"));
+				p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda(trenutna cijena proizvoda: " + p.getCijena() + "): ","Greška", 1, Double.MAX_VALUE));
+				p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije(trenutno trajanje garnacije: " + p.getGarancija() + "): ", "Greška",0,Double.MAX_VALUE));
+			}
+		}				
 	}
 
 	private void unosProizvoda() {
 		Proizvod p = new Proizvod();
-		p.setSifra(Pomocno.unosBroja("Unesi šifru proizvoda: ", "Greška", 1, Integer.MAX_VALUE));
+		p.setSifra(Pomocno.unosSifreProizvoda(proizvodi));
 		p.setNaziv(Pomocno.unosString("Unesi ime proizvoda: ", "Greška"));
 		p.setCijena(Pomocno.unosDouble("Unesi cijenu proizvoda: ", "Greška", 1, Double.MAX_VALUE));
 		p.setGarancija(Pomocno.unosDouble("Unesi duljinu trajanja garancije: ", "Greška", 0, Double.MAX_VALUE));
@@ -100,7 +114,7 @@ public class ObradaProizvod {
 		System.out.println("----- Proizvodi -----");
 		System.out.println("---------------------");
 		if (proizvodi.isEmpty()) {
-			System.out.println("Nema unesenih proizvoda");
+			System.out.println("\n *** Nema unesenih proizvoda ***");
 		}
 
 		int b = 1;

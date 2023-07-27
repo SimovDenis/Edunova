@@ -28,7 +28,7 @@ public class ObradaDjelatnik {
 	}
 
 	public void prikaziIzbornik() {
-		System.out.println("Izbornik Djelatnik");
+		System.out.println("\nIzbornik Djelatnik");
 		System.out.println("1. Pregled djelatnika");
 		System.out.println("2. Unos novog djelatnika");
 		System.out.println("3. Izmjena postojećeg djelatnika");
@@ -68,28 +68,41 @@ public class ObradaDjelatnik {
 	}
 
 	private void brisanjeDjelatnika() {
-		pregledDjelatnika();
-		int index = Pomocno.unosBroja("Unesite šifru djelatnika kojeg želite obrisati: ", "Neispravna šifra", 1, djelatnici.size());
-		djelatnici.remove(index - 1);
-
+		if (djelatnici.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan djelatnik ***");
+		}
+		else {
+			boolean upit = Pomocno.unosBoolean("Jeste li sigurni da želite obrisati djelatnika?(da za potvrdu, bilo što drugo za odustajanje): ");
+			if (upit) {
+				pregledDjelatnika();
+				int index = Pomocno.unosBroja("Unesite šifru djelatnika kojeg želite obrisati: ", "Neispravna šifra", 1, djelatnici.size());
+				djelatnici.remove(index - 1);
+			}			
+		}
 	}
 
 	private void izmjenaDjelatnika() {
-		pregledDjelatnika();
-		int index = Pomocno.unosBroja("Unesi šifru djelatnika kojeg želite izmjeniti: ", "Šifra nije dobra, pokušaj ponovno", 1, djelatnici.size());
-		Djelatnik d = djelatnici.get(index - 1);
-		d.setSifra(Pomocno.unosBroja("Unesi šifru djelatnika (trenutna šifra: " + d.getSifra() + "): ", "Greška", 1, Integer.MAX_VALUE));
-		d.setIme(Pomocno.unosString("Unesi ime djelatnika" + "(trenutno ime: " + d.getIme() + "): ", "Ime obavezno"));
-		d.setPrezime(Pomocno.unosString("Unesi prezime djelatnika(trenutno prezime: " + d.getPrezime() + "): ", "Obavezno unijeti prezime"));
-		d.setBrojUgovora(Pomocno.unosString("Unesi broj ugovora djelatnika(trenutni broj ugovora: " + d.getBrojUgovora() + "): ", "Obavezno unijeti broj ugovora"));
-		d.setIban(Pomocno.unosString("Unesi iban djelatnika(trenutni iban: " + d.getIban() + "): ", "Obavezno unijeti iban djelatnika"));
-		d.setKontakt(Pomocno.unosString("Unesi kontakt djelatnika(trenutni kontakt: " + d.getKontakt() + "): ", "Obavezno unijeti kontakt"));
+		if (djelatnici.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan djelatnik ***");
+		}
+		else {
+			pregledDjelatnika();
+			int index = Pomocno.unosBroja("Unesi šifru djelatnika kojeg želite izmjeniti: ", "Šifra nije dobra, pokušaj ponovno", 1, djelatnici.size());
+			Djelatnik d = djelatnici.get(index - 1);
+			d.setSifra(Pomocno.unosSifreDjelatnika(djelatnici));
+			d.setIme(Pomocno.unosString("Unesi ime djelatnika" + "(trenutno ime: " + d.getIme() + "): ", "Ime obavezno"));
+			d.setPrezime(Pomocno.unosString("Unesi prezime djelatnika(trenutno prezime: " + d.getPrezime() + "): ", "Obavezno unijeti prezime"));
+			d.setBrojUgovora(Pomocno.unosString("Unesi broj ugovora djelatnika(trenutni broj ugovora: " + d.getBrojUgovora() + "): ", "Obavezno unijeti broj ugovora"));
+			d.setIban(Pomocno.unosString("Unesi iban djelatnika(trenutni iban: " + d.getIban() + "): ", "Obavezno unijeti iban djelatnika"));
+			d.setKontakt(Pomocno.unosString("Unesi kontakt djelatnika(trenutni kontakt: " + d.getKontakt() + "): ", "Obavezno unijeti kontakt"));
+		}
+		
 	}
 
 	private void unosDjelatnika() {
 		Djelatnik d = new Djelatnik();
 
-		d.setSifra(Pomocno.unosBroja("Unesi sifru djelatnika: ", "Unesi pozitivan broj", 1, Integer.MAX_VALUE));
+		d.setSifra(Pomocno.unosSifreDjelatnika(djelatnici));
 		d.setIme(Pomocno.unosString("Unesi ime djelatnika: ", "Obavezno unijeti ime"));
 		d.setPrezime(Pomocno.unosString("Unesi prezime djelatnika: ", "Obavezno unijeti prezime"));
 		d.setBrojUgovora(Pomocno.unosString("Unesi broj ugovora djelatnika", "Obavezno unijeti broj ugovora"));
@@ -105,7 +118,7 @@ public class ObradaDjelatnik {
 		System.out.println("----------------------");
 
 		if (djelatnici.isEmpty()) {
-			System.out.println("Nema unesenog djelatnika");
+			System.out.println("\n *** Nema unesenog djelatnika ***");
 		}
 
 		int b = 1;

@@ -2,7 +2,13 @@ package konzolnaAplikacija;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
+
+import konzolna.model.Djelatnik;
+import konzolna.model.Kupac;
+import konzolna.model.Proizvod;
+import konzolna.model.Racun;
 
 public class Pomocno {
 
@@ -32,6 +38,70 @@ public class Pomocno {
 
 		}
 
+	}
+	
+	public static int unosSifreDjelatnika(List<Djelatnik> djelatnici) {
+		while (true) {
+			int sifra = Pomocno.unosBroja("Unesi šifru djelatnika: ", "Greška", 1, Integer.MAX_VALUE);
+			boolean provjera = true;
+			for (int i = 0; i < djelatnici.size(); i++) {
+				if (djelatnici.get(i).getSifra() == sifra) {
+					System.out.println("Šifra " + sifra + " već postoji. Unesite drugu šifru.");
+					provjera = false;
+				}
+			}
+			if (provjera) {
+				return sifra;				
+			}
+		}	
+	}
+	
+	public static int unosSifreRacuna(List<Racun> racuni) {
+		while (true) {
+			int sifra = Pomocno.unosBroja("Unesi šifru računa: ", "Greška", 1, Integer.MAX_VALUE);
+			boolean provjera = true;
+			for (int i = 0; i < racuni.size(); i++) {
+				if (racuni.get(i).getSifra() == sifra) {
+					System.out.println("Šifra " + sifra + " već postoji. Unesite drugu šifru.");
+					provjera = false;
+				}
+			}
+			if (provjera) {
+				return sifra;				
+			}
+		}	
+	}
+	
+	public static int unosSifreKupca(List<Kupac> kupci) {
+		while (true) {
+			int sifra = Pomocno.unosBroja("Unesi šifru kupca: ", "Greška", 1, Integer.MAX_VALUE);
+			boolean provjera = true;
+			for (int i = 0; i < kupci.size(); i++) {
+				if (kupci.get(i).getSifra() == sifra) {
+					System.out.println("Šifra " + sifra + " već postoji. Unesite drugu šifru.");
+					provjera = false;
+				}
+			}
+			if (provjera) {
+				return sifra;				
+			}
+		}	
+	}
+	
+	public static int unosSifreProizvoda(List<Proizvod> proizvodi) {
+		while (true) {
+			int sifra = Pomocno.unosBroja("Unesi šifru proizvoda: ", "Greška", 1, Integer.MAX_VALUE);
+			boolean provjera = true;
+			for (int i = 0; i < proizvodi.size(); i++) {
+				if (proizvodi.get(i).getSifra() == sifra) {
+					System.out.println("Šifra " + sifra + " već postoji. Unesite drugu šifru.");
+					provjera = false;
+				}
+			}
+			if (provjera) {
+				return sifra;				
+			}
+		}	
 	}
 
 	public static String unosString(String poruka, String greska) {

@@ -28,7 +28,7 @@ public class ObradaKupac {
 	}
 
 	public void prikaziIzbornik() {
-		System.out.println("Izbornik Kupci");
+		System.out.println("\nIzbornik Kupci");
 		System.out.println("1. Pregled postojećih kupaca");
 		System.out.println("2. Unos novog kupca");
 		System.out.println("3. Izmjena postojećeg kupca");
@@ -69,27 +69,41 @@ public class ObradaKupac {
 	}
 
 	private void brisanjeKupca() {
-		pregledKupaca();
-		int index = Pomocno.unosBroja("Odaberi kupca za brisanje", "Greska", 1, kupci.size());
-		kupci.remove(index - 1);
-
+		if (kupci.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan kupac ***");
+		} else {
+			boolean upit = Pomocno.unosBoolean(
+					"Jeste li sigurni da želite obrisati kupca? (da za nastavak ili bilo što za odustajanje): ");
+			if (upit) {
+				pregledKupaca();
+				int index = Pomocno.unosBroja("Odaberi kupca za brisanje", "Greska", 1, kupci.size());
+				kupci.remove(index - 1);
+			}
+		}			
 	}
 
 	private void izmjenaKupca() {
-		pregledKupaca();
-		int index = Pomocno.unosBroja("Odaberi kupca za izmjenu", "Odabrani kupac ne postoji", 1, kupci.size());
-		Kupac k = kupci.get(index - 1);
-		k.setSifra(Pomocno.unosBroja("Unesi šifru kupca(trenutna šifra: " + k.getSifra() + "): ", "Greška", 1, Integer.MAX_VALUE));
-		k.setIme(Pomocno.unosString("Unesi ime kupca(trenutno ime kupca: " + k.getIme() + "): ", "Greška"));
-		k.setPrezime(Pomocno.unosString("Unesi ime kupca(trenutno prezime kupca: " + k.getPrezime() + "): ", "Greška"));
-		k.setKontakt(Pomocno.unosString("Unesi ime kupca(trenutni kontakt kupca: " + k.getKontakt() + "): ", "Greška"));
-
+		if (kupci.isEmpty()) {
+			System.out.println("\n*** Trenutno nije unesen niti jedan kupac ***");
+		} else {
+			boolean upit = Pomocno.unosBoolean(
+					"Jeste li sigurni da želite izmjeniti kupca? (da za nastavak ili bilo što za odustajanje): ");
+			if (upit) {
+				pregledKupaca();
+				int index = Pomocno.unosBroja("Odaberi kupca za izmjenu", "Odabrani kupac ne postoji", 1, kupci.size());
+				Kupac k = kupci.get(index - 1);
+				k.setSifra(Pomocno.unosSifreKupca(kupci));
+				k.setIme(Pomocno.unosString("Unesi ime kupca(trenutno ime kupca: " + k.getIme() + "): ", "Greška"));
+				k.setPrezime(Pomocno.unosString("Unesi ime kupca(trenutno prezime kupca: " + k.getPrezime() + "): ", "Greška"));
+				k.setKontakt(Pomocno.unosString("Unesi ime kupca(trenutni kontakt kupca: " + k.getKontakt() + "): ", "Greška"));
+			}
+		}			
 	}
 
 	private void unosKupca() {
 		Kupac k = new Kupac();
 
-		k.setSifra(Pomocno.unosBroja("Unesi sifru kupca", "Sifra obavzna", 1, Integer.MAX_VALUE));
+		k.setSifra(Pomocno.unosSifreKupca(kupci));
 		k.setIme(Pomocno.unosString("Unesi ime kupca", "Ime obavezno"));
 		k.setPrezime(Pomocno.unosString("Unesi prezime kupca", "Prezime obavezno"));
 		k.setKontakt(Pomocno.unosString("Unesi kontakt kupca", "Kontakt obavezan"));
@@ -102,7 +116,7 @@ public class ObradaKupac {
 		System.out.println("----- Kupci -----");
 		System.out.println("-----------------");
 		if (kupci.isEmpty()) {
-			System.out.println("Nema unesenog kupca");
+			System.out.println("\n *** Nema unesenog kupca ***");
 		}
 
 		int b = 1;

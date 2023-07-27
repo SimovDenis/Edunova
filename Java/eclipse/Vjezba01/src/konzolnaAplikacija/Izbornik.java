@@ -28,7 +28,7 @@ public class Izbornik {
 
 	private void prikaziIzbornik() {
 
-		System.out.println("Glavni izbornik");
+		System.out.println("\nGlavni izbornik");
 		System.out.println("1. Djelatnici");
 		System.out.println("2. Kupci");
 		System.out.println("3. Proizvodi");
