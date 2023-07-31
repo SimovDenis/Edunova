@@ -3,7 +3,7 @@ package konzolnaAplikacija;
 import java.util.ArrayList;
 import java.util.List;
 
-import edunova.Pomocno;
+
 import konzolna.model.Djelatnik;
 import konzolna.model.Kupac;
 import konzolna.model.Proizvod;

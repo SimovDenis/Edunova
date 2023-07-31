@@ -39,7 +39,7 @@ public class ObradaKupac {
 
 	private void odabirStavkeIzbornika() {
 
-		switch (Pomocno.unosBroja("Unesi željenu stavku izbornika", "Obavezno 1-5", 1, 5)) {
+		switch (Pomocno.unosBroja("Unesi željenu stavku izbornika: ", "Obavezno 1-5", 1, 5)) {
 
 		case 1:
 			pregledKupaca();

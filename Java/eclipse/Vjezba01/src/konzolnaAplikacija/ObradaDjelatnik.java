@@ -39,7 +39,7 @@ public class ObradaDjelatnik {
 
 	private void ucitajStavkuIzbornika() {
 
-		switch (Pomocno.unosBroja("Odaberi željenu akciju", "Odabir mora biti 1-5", 1, 5)) {
+		switch (Pomocno.unosBroja("Odaberi željenu akciju: ", "Odabir mora biti 1-5", 1, 5)) {
 
 		case 1:
 			pregledDjelatnika();
