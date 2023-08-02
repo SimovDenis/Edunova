@@ -6,4 +6,7 @@
  *
  */
 module BegnnersGuideBookExercises {
+	
+	requires java.desktop;
+	
 }
