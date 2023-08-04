@@ -1,4 +1,4 @@
-package TryThis;
+package tryThis;
 
 public class Sound {
 	
