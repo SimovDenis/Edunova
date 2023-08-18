@@ -7,8 +7,8 @@ public class Vehicle {
 	int mpg;
 	
 	public Vehicle(int p, int f, int m) {
-		passengers = p;
-		fuelcap = f;
+		this.passengers = p;
+		this.fuelcap = f;
 		mpg = m;
 	}
 	
