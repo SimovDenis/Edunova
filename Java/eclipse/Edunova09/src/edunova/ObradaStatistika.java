@@ -19,7 +19,7 @@ public class ObradaStatistika {
 	public void prikaziIzbornik() {
 		System.out.println("\nStatistika izbornik");
 		System.out.println("1. Ukupno polaznika na grupi");
-		System.out.println("2. Prosječan broj polaznika u grupi");
+//		System.out.println("2. Prosječan broj polaznika u grupi");
 //		System.out.println("3. Ukupan iznos prihoda po smjerovima");
 //		System.out.println("4. Prosječan iznos prihoda po polazniku");
 //		System.out.println("5. Najraniji i najkasniji početak grupe uz ispis razlike broja dana između ta dva datuma");
