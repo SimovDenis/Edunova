@@ -11,12 +11,12 @@ public class E03Rekurzija {
 
 	
 	// Exception in thread "main" java.lang.StackOverflowError
-	private static void metoda() {
-		
-		metoda();
-		
-	}
-	
+//	private static void metoda() {
+//		
+//		metoda();
+//		
+//	}
+//	
 	// Rekurzija je kada metoda poziva samu sebe
 	// uz uvijet prekida rekurzije
 	static int faktorijel(int broj) {

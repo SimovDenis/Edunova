@@ -13,7 +13,7 @@ public class E02KoristenjeMetoda {
 		// ne statične metode se pozivaju na objektu
 		
 		// objekt koji je instanca klase
-		Pomocno p = new Pomocno();
+		//Pomocno p = new Pomocno();
 		// objekti mogu pamtiti stanje
 		
 //		System.out.println(p.valjanOIB("69694221483")); // warning kada je metoda statična
