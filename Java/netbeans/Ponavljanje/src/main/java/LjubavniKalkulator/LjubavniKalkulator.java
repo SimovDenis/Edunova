@@ -138,7 +138,6 @@ public class LjubavniKalkulator extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(0, 0));
 
         btnRacun.setText("Izračunaj");
-        btnRacun.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         btnRacun.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         btnRacun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

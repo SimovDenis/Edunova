@@ -89,7 +89,6 @@
     <Component class="javax.swing.JButton" name="btnRacun">
       <Properties>
         <Property name="text" type="java.lang.String" value="Izra&#x10d;unaj"/>
-        <Property name="horizontalAlignment" type="int" value="10"/>
         <Property name="horizontalTextPosition" type="int" value="10"/>
       </Properties>
       <Events>
