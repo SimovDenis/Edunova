@@ -133,6 +133,7 @@ public class LjubavniKalkulator extends javax.swing.JFrame {
         lblPrviTekst = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ljubavni Kalkulator");
         setPreferredSize(new java.awt.Dimension(500, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
