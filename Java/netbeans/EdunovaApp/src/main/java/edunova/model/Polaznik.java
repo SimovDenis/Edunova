@@ -1,5 +1,8 @@
 package edunova.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Polaznik extends Osoba {
 
     private String brojUgovora;

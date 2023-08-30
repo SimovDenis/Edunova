@@ -1,27 +1,22 @@
 package edunova.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import java.math.BigDecimal;
 
 @Entity
 public class Smjer extends Entitet {
 
+    @Column(nullable = false)
     private String naziv;
-    private float cijena;
-    private float upisnina;
-    private int trajanje;
+    private BigDecimal cijena;
+    private BigDecimal upisnina;
+    private Integer trajanje;
+    @Column(columnDefinition = "boolean")
     private boolean verificiran;
 
     public Smjer() {
 
-    }
-
-    public Smjer(int sifra, String naziv, float cijena, float upisnina, int trajanje, boolean verificiran) {
-        super(sifra);
-        this.naziv = naziv;
-        this.cijena = cijena;
-        this.upisnina = upisnina;
-        this.trajanje = trajanje;
-        this.verificiran = verificiran;
     }
 
     public String getNaziv() {
@@ -32,28 +27,37 @@ public class Smjer extends Entitet {
         this.naziv = naziv;
     }
 
-    public float getCijena() {
-        return cijena;
-    }
-
-    public void setCijena(float cijena) {
+    public Smjer(String naziv, BigDecimal cijena, BigDecimal upisnina, Integer trajanje, boolean verificiran, Integer sifra) {
+        super(sifra);
+        this.naziv = naziv;
         this.cijena = cijena;
-    }
-
-    public float getUpisnina() {
-        return upisnina;
-    }
-
-    public void setUpisnina(float upisnina) {
         this.upisnina = upisnina;
+        this.trajanje = trajanje;
+        this.verificiran = verificiran;
     }
 
-    public int getTrajanje() {
+    public void setTrajanje(Integer trajanje) {
+        this.trajanje = trajanje;
+    }
+
+    public Integer getTrajanje() {
         return trajanje;
     }
 
-    public void setTrajanje(int trajanje) {
-        this.trajanje = trajanje;
+    public BigDecimal getCijena() {
+        return cijena;
+    }
+
+    public BigDecimal getUpisnina() {
+        return upisnina;
+    }
+
+    public void setCijena(BigDecimal cijena) {
+        this.cijena = cijena;
+    }
+
+    public void setUpisnina(BigDecimal upisnina) {
+        this.upisnina = upisnina;
     }
 
     public boolean isVerificiran() {
