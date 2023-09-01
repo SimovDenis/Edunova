@@ -86,7 +86,7 @@ public class PocetniInsert {
     private void kreirajGrupe() {
         Grupa g;
         List<Polaznik> p;
-        for(int i = 0; i < BROJ_GRUPA; i++){
+        for (int i = 0; i < BROJ_GRUPA; i++) {
             g = new Grupa();
             g.setNaziv(faker.chuckNorris().fact());
             g.setDatumPocetka(faker.date().birthday(1, 10));
@@ -94,10 +94,10 @@ public class PocetniInsert {
             g.setSmjer(smjerovi.get(faker.number().numberBetween(0, BROJ_SMJEROVA - 1)));
             g.setMaxpolaznika(faker.number().numberBetween(5, 30));
             p = new ArrayList<>();
-            for(int j = 0; j < faker.number().numberBetween(5, g.getMaxpolaznika()); j++){
+            for (int j = 0; j < faker.number().numberBetween(5, g.getMaxpolaznika()); j++) {
                 p.add(polaznici.get(faker.number().numberBetween(0, BROJ_POLAZNIKA - 1)));
             }
-            
+
             g.setPolaznici(p);
             session.persist(g);
         }

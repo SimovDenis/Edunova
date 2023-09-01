@@ -5,6 +5,7 @@
 package zavrsni;
 
 import zavrsni.util.HibernateUtil;
+import zavrsni.util.PocetniInsert;
 
 /**
  *
@@ -13,6 +14,7 @@ import zavrsni.util.HibernateUtil;
 public class Start {
 
     public static void main(String[] args) {
-        HibernateUtil.getSession();
+        //HibernateUtil.getSession();
+        new PocetniInsert();
     }
 }
