@@ -211,7 +211,7 @@ public class MyCurrencyConverter extends javax.swing.JFrame {
                 amountChanged = 0;
         }
         
-        String value = String.format("%.2f", amountChanged);
+        String value = String.format("%.3f", amountChanged);
         txtSecondAmount.setText(value);
 
 
