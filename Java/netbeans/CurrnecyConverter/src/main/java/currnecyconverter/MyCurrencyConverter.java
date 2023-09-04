@@ -10,8 +10,6 @@ package currnecyconverter;
  */
 public class MyCurrencyConverter extends javax.swing.JFrame {
 
-    String[] currencyUnits = {"Euro", "US Dollar", "South Korean won", "Swiss Franc", "Japanese Yen"};
-
     double euro = 1.17;
     double dollar = 1.26;
     double won = 1663.62;
