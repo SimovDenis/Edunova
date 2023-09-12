@@ -27,15 +27,14 @@ public class Start {
         //new PocetniInsert();
 
         //System.out.println(new Gson().toJson(new ObradaSmjer().read()));
-        ObradaPolaznik op = new ObradaPolaznik();
-        Polaznik p = new Polaznik();
-        p.setIme("Pero");
-        p.setPrezime("Perić");
-        p.setOib("2425432534634563");
-        op.setEntitet(p);
+       ObradaSmjer os = new ObradaSmjer();
+       Smjer s = new Smjer();
+       s.setNaziv("denis");
+       s.setCijena(new BigDecimal(3.5));
+       os.setEntitet(s);
         
         try {
-            op.create();
+            os.create();
         } catch (EdunovaException ex) {
             System.out.println(ex.getPoruka());
         }
