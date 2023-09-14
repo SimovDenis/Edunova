@@ -21,6 +21,25 @@ public class ObradaPolaznik extends ObradaOsoba<Polaznik> {
 
     @Override
     protected void kontrolaBrisanje() throws EdunovaException {
+        if (entitet.getGrupe().isEmpty()) {
+            throw new EdunovaException("Ne možeš obrisati polaznika jer se nalazi na nekoj grupi");
+        }
+
+    }
+
+    @Override
+    protected void kontrolaUnos() throws EdunovaException {
+        super.kontrolaUnos();        
+        kontrolaBrojUgovora();
+    }
+
+    private void kontrolaBrojUgovora() throws EdunovaException {
+        String s = entitet.getBrojUgovora();
+
+        if (s == null || !s.contains("/")) {
+            throw new EdunovaException("Broj ugovora mora sadržavati /");
+
+        }
 
     }
 
