@@ -12,6 +12,7 @@ import edunova.controller.ObradaSmjer;
 import edunova.model.Operater;
 import edunova.model.Smjer;
 import edunova.util.EdunovaException;
+import edunova.util.HibernateUtil;
 import java.util.List;
 
 /**
@@ -22,14 +23,14 @@ public class Start {
 
     public static void main(String[] args) {
 
-       //  HibernateUtil.getSession();
+       // HibernateUtil.getSession();
         
       
-       ObradaOperater oo = new ObradaOperater();
-       
-       Operater o = oo.autoriziraj("oper@edunova.hr", "oper");
-       
-        System.out.println(o==null ? "Neispravno" : o.getIme());
+//       ObradaOperater oo = new ObradaOperater();
+//       
+//       Operater o = oo.autoriziraj("oper@edunova.hr", "oper");
+//       
+//       System.out.println(o==null ? "Neispravno" : o.getIme());
         
         
         //System.out.println(hash);
