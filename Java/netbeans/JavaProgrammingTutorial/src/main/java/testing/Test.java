@@ -4,7 +4,7 @@
  */
 package testing;
 
-import ExercisesOnClasses.rectangles.Rectangle;
+import ExercisesOnClasses.employees.Employee;
 
 /**
  *
@@ -13,22 +13,23 @@ import ExercisesOnClasses.rectangles.Rectangle;
 public class Test {
 
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(1.2f, 3.4f);
-        System.out.println(r1);
-        
-        Rectangle r2 = new Rectangle();
-        System.out.println(r2);
-        
-        r1.setLength(5.6f);
-        r1.setWidth(7.8f);
-        System.out.println(r1);
-        
-        System.out.println("length is: " + r1.getLength());
-        System.out.println("width is: " + r1.getWidth());
-        
-        System.out.printf("area is: %.2f%n", r1.getArea());
-        System.out.printf("perimeter is: %.2f%n", r1.getPerimeter());
-        
+
+        Employee e1 = new Employee(8, "Peter", "Tan", 2500);
+        System.out.println(e1);
+
+        e1.setSalary(999);
+        System.out.println(e1);
+        System.out.println("id is: " + e1.getId());
+        System.out.println("first name is: " + e1.getFirstName());
+        System.out.println("last name is: " + e1.getLastName());
+        System.out.println("salary is: " + e1.getSalary());
+
+        System.out.println("name is: " + e1.getName());
+        System.out.println("annual salary is: " + e1.getAnnualSalary());
+
+        System.out.println(e1.raiseSalary(10));
+        System.out.println(e1);
+
     }
 
 }
