@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ExercisesOnClasses;
+package ExercisesOnClasses.circles;
 
 /**
  *
@@ -26,15 +26,27 @@ public class Circle {
     }
 
     public double getRadius() {
-        return this.radius;
+        return radius;
     }
 
     public String getColor() {
-        return this.color;
+        return color;
     }
 
     public double getArea() {
-        return this.radius * this.radius * Math.PI;
+        return radius * radius * Math.PI;
+    }
+
+    public void setRadius(double newRadius) {
+        this.radius = newRadius;
+    }
+
+    public void setColor(String newColor) {
+        this.color = newColor;
+    }
+
+    public String toString() {
+        return "Circle[radius=" + radius + " color=" + color + "]";
     }
 
 }
