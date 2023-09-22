@@ -4,8 +4,8 @@
  */
 package testing;
 
-import ExercisesOnComposition.authorbook.Author;
-import ExercisesOnComposition.authorbook.Book;
+import ExercisesOnComposition.authorbook.Author2;
+import ExercisesOnComposition.authorbook.Book3;
 
 /**
  *
@@ -15,29 +15,28 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Author ahTeck = new Author("Tah Ah Teck", "ahteck@nowhere.com", 'm');
-        System.out.println(ahTeck);
+        Author2 a1 = new Author2("Tan Ah Teck", "ahteck@nowhere.com");
+        System.out.println(a1);
 
-        Book dummyBook = new Book("Java for dummy", ahTeck, 19.95, 99);
-        System.out.println(dummyBook);
+        a1.setEmail("ahteck@somewhere.com");
+        System.out.println(a1);
+        System.out.println("name is: " + a1.getName());
+        System.out.println("email is: " + a1.getEmail());
 
-        dummyBook.setPrice(29.95);
-        dummyBook.setQty(28);
-        System.out.println("name is: " + dummyBook.getName());
-        System.out.println("price is: " + dummyBook.getPrice());
-        System.out.println("qty is: " + dummyBook.getQty());
-        System.out.println("Author is: " + dummyBook.getAuthor());
-        System.out.println("Aurhor's name is: " + dummyBook.getAuthor().getName());
-        System.out.println("Author's email is: " + dummyBook.getAuthor().getEmail());
+        Book3 b1 = new Book3("12345", "Java for dummies", a1, 8.8, 88);
+        System.out.println(b1);
 
-        Book anotherBook = new Book("more Java",
-                new Author("Paul Tan", "paul@somehwere.com", 'm'), 29.95);
-
-        System.out.println(anotherBook);
-
-        System.out.println(anotherBook.getAuthorName());
-        System.out.println(anotherBook.getEmail());
-        System.out.println(anotherBook.getGender());
+        b1.setPrice(9.9);
+        b1.setQty(99);
+        System.out.println(b1);
+        System.out.println("isbn is: " + b1.getIsbn());
+        System.out.println("name is: " + b1.getName());
+        System.out.println("price is: " + b1.getPrice());
+        System.out.println("qty is: " + b1.getQty());
+        System.out.println("author is: " + b1.getAuthor());
+        System.out.println("author's name: " + b1.getAuthorName());
+        System.out.println("author's name: " + b1.getAuthor().getName());
+        System.out.println("author's email: " + b1.getAuthor().getEmail());
 
     }
 
