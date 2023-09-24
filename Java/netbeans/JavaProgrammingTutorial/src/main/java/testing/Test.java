@@ -4,8 +4,7 @@
  */
 package testing;
 
-import ExercisesOnComposition.customeraccount.Account;
-import ExercisesOnComposition.customeraccount.Customer;
+import ExercisesOnComposition.mypoint.MyPoint;
 
 /**
  *
@@ -15,17 +14,8 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Customer c1 = new Customer(23, "Michael Jordan", 'm');
-        System.out.println(c1.toString());
-
-        Account a1 = new Account(11, c1, 22.2);
-        System.out.println(a1);
-
-        a1.deposit(33.45);
-        System.out.println(a1);
-
-        a1.withdraw(60);
-        System.out.println(a1);
+        MyPoint p1 = new MyPoint(3, 4);
+        System.out.println(p1.distance(5, 6));
 
     }
 
