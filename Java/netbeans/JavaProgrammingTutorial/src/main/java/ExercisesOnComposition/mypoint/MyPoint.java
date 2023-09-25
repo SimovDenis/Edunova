@@ -4,9 +4,6 @@
  */
 package ExercisesOnComposition.mypoint;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-
 /**
  *
  * @author Denis

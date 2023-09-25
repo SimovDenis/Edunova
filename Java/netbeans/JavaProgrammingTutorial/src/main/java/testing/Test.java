@@ -4,7 +4,9 @@
  */
 package testing;
 
+import ExercisesOnComposition.mypoint.MyLine;
 import ExercisesOnComposition.mypoint.MyPoint;
+import java.util.Arrays;
 
 /**
  *
@@ -14,8 +16,14 @@ public class Test {
 
     public static void main(String[] args) {
 
-        MyPoint p1 = new MyPoint(3, 4);
-        System.out.println(p1.distance(5, 6));
+        MyLine myLine = new MyLine(new MyPoint(2, 3), new MyPoint(4, 5));
+        System.out.println(myLine);
+
+        System.out.println(myLine.getBegin());
+        myLine.setBegin(new MyPoint(1, 2));
+        System.out.println(Arrays.toString(myLine.getBeginXY()));
+        System.out.println(myLine.getGradient());
+        System.out.println(myLine.getLength());
 
     }
 
