@@ -4,8 +4,8 @@
  */
 package testing;
 
-import ExercisesOnComposition.mycircle.MyCircle;
 import ExercisesOnComposition.mypoint.MyPoint;
+import ExercisesOnComposition.myrectangle.MyRectangle;
 
 /**
  *
@@ -15,17 +15,14 @@ public class Test {
 
     public static void main(String[] args) {
 
-        MyCircle c1 = new MyCircle(new MyPoint(2, 3), 4);
-        try {
-            System.out.println(c1.getArea());
-        } catch (Exception ex) {
-            ex.getMessage();
-        }
+        MyRectangle r1 = new MyRectangle(new MyPoint(3, 5), new MyPoint(6, 2));
+        System.out.println(r1);
 
-        System.out.println(c1.getCircumference());
-        System.out.println(c1);
-
-        System.out.println(c1.distance(new MyCircle(3, 5, 8)));
+        System.out.println(r1.getArea());
+        System.out.println(r1.getAllPoints());
+        System.out.println(r1.getPerimeter());
+        System.out.println(r1.getBottomLeft());
+        System.out.println(r1.getTopRight());
 
     }
 
