@@ -7,12 +7,19 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
+import edunova.controller.ObradaGrupa;
 import edunova.controller.ObradaOperater;
+import edunova.controller.ObradaPolaznik;
 import edunova.controller.ObradaSmjer;
+import edunova.model.Grupa;
 import edunova.model.Operater;
+import edunova.model.Polaznik;
 import edunova.model.Smjer;
 import edunova.util.EdunovaException;
 import edunova.util.HibernateUtil;
+import edunova.util.PocetniInsert;
+import edunova.view.Autorizacija;
+import edunova.view.SplashScreen;
 import java.util.List;
 
 /**
@@ -23,23 +30,21 @@ public class Start {
 
     public static void main(String[] args) {
 
-       // HibernateUtil.getSession();
-        
+        //lozinka();
+      new SplashScreen().setVisible(true);
       
-//       ObradaOperater oo = new ObradaOperater();
-//       
-//       Operater o = oo.autoriziraj("oper@edunova.hr", "oper");
-//       
-//       System.out.println(o==null ? "Neispravno" : o.getIme());
+      //HibernateUtil.getSession();
         
-        
-        //System.out.println(hash);
-        
-        
-        
+      /*
+       ObradaOperater oo = new ObradaOperater();
+       
+       Operater o = oo.autoriziraj("oper@edunova.hr", "oper");
+       
+        System.out.println(o==null ? "Neispravno" : o.getIme());
+        */
     }
     
-    private void lozinka(){
+    private static void lozinka(){
          // factory pattern
         Argon2 argon2 = Argon2Factory.create();
         

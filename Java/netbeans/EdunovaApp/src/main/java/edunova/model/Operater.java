@@ -8,11 +8,11 @@ import jakarta.persistence.Entity;
 
 /**
  *
- * @author Denis
+ * @author Katedra
  */
 @Entity
-public class Operater extends Osoba {
-
+public class Operater extends Osoba{
+    
     private String lozinka;
     private String uloga;
 
@@ -31,5 +31,5 @@ public class Operater extends Osoba {
     public void setUloga(String uloga) {
         this.uloga = uloga;
     }
-
+    
 }

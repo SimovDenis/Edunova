@@ -16,6 +16,7 @@ public class Grupa extends Entitet {
     @ManyToOne
     private Predavac predavac;
     private Date datumPocetka;
+
     @ManyToMany
     private List<Polaznik> polaznici;
 
@@ -42,8 +43,6 @@ public class Grupa extends Entitet {
     public void setMaxpolaznika(Integer maxpolaznika) {
         this.maxpolaznika = maxpolaznika;
     }
-
-  
 
     public Predavac getPredavac() {
         return predavac;

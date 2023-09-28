@@ -9,7 +9,7 @@ import java.util.List;
 public class Predavac extends Osoba {
 
     private String iban;
-
+    
     @OneToMany(mappedBy = "predavac")
     private List<Grupa> grupe = new ArrayList<>();
 
@@ -21,6 +21,10 @@ public class Predavac extends Osoba {
         this.grupe = grupe;
     }
 
+    
+    
+    
+    
     public Predavac() {
 
     }

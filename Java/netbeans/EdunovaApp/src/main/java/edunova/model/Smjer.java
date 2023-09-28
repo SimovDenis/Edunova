@@ -17,12 +17,21 @@ public class Smjer extends Entitet {
     private Integer trajanje;
     @Column(columnDefinition = "boolean")
     private Boolean verificiran;
-
+    
     @OneToMany(mappedBy = "smjer")
     private List<Grupa> grupe = new ArrayList<>();
 
     public Smjer() {
 
+    }
+
+    public Smjer(Integer sifra, String naziv, BigDecimal cijena, BigDecimal upisnina, Integer trajanje, boolean verificiran) {
+        super(sifra);
+        this.naziv = naziv;
+        this.cijena = cijena;
+        this.upisnina = upisnina;
+        this.trajanje = trajanje;
+        this.verificiran = verificiran;
     }
 
     public String getNaziv() {
@@ -33,37 +42,28 @@ public class Smjer extends Entitet {
         this.naziv = naziv;
     }
 
-    public Smjer(String naziv, BigDecimal cijena, BigDecimal upisnina, Integer trajanje, boolean verificiran, Integer sifra) {
-        super(sifra);
-        this.naziv = naziv;
-        this.cijena = cijena;
-        this.upisnina = upisnina;
-        this.trajanje = trajanje;
-        this.verificiran = verificiran;
-    }
-
-    public void setTrajanje(Integer trajanje) {
-        this.trajanje = trajanje;
-    }
-
-    public Integer getTrajanje() {
-        return trajanje;
-    }
-
     public BigDecimal getCijena() {
         return cijena;
-    }
-
-    public BigDecimal getUpisnina() {
-        return upisnina;
     }
 
     public void setCijena(BigDecimal cijena) {
         this.cijena = cijena;
     }
 
+    public BigDecimal getUpisnina() {
+        return upisnina;
+    }
+
     public void setUpisnina(BigDecimal upisnina) {
         this.upisnina = upisnina;
+    }
+
+    public Integer getTrajanje() {
+        return trajanje;
+    }
+
+    public void setTrajanje(Integer trajanje) {
+        this.trajanje = trajanje;
     }
 
     public Boolean isVerificiran() {
@@ -81,5 +81,12 @@ public class Smjer extends Entitet {
     public void setGrupe(List<Grupa> grupe) {
         this.grupe = grupe;
     }
+
+    @Override
+    public String toString() {
+        return naziv;
+    }
+    
+    
 
 }

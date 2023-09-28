@@ -1,6 +1,7 @@
 package edunova.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 public class Polaznik extends Osoba {
 
     private String brojUgovora;
-
+    
     @ManyToMany(mappedBy = "polaznici")
     private List<Grupa> grupe = new ArrayList<>();
 
@@ -21,6 +22,10 @@ public class Polaznik extends Osoba {
         this.grupe = grupe;
     }
 
+    
+    
+    
+    
     public Polaznik() {
 
     }

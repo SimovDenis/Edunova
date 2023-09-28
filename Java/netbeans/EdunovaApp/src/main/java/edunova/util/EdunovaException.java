@@ -1,11 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package edunova.util;
 
 /**
  *
- * @author Denis
+ * @author Katedra
  */
-public class EdunovaException extends Exception {
-
+public class EdunovaException  extends Exception{
+    
     private String poruka;
 
     public EdunovaException(String poruka) {
@@ -16,5 +20,9 @@ public class EdunovaException extends Exception {
     public String getPoruka() {
         return poruka;
     }
-
+    
+    
+    
+    
+    
 }
