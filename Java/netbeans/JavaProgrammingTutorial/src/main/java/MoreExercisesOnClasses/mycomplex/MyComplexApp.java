@@ -60,7 +60,7 @@ public class MyComplexApp {
     }
 
     private String imagCheck(MyComplex number) {
-        if (number.isImaginary()) {
+        if (number.getReal() == 0) {
             return "";
         }
         return "NOT ";
