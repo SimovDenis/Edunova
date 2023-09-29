@@ -7,18 +7,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
-import edunova.controller.ObradaGrupa;
 import edunova.controller.ObradaOperater;
-import edunova.controller.ObradaPolaznik;
 import edunova.controller.ObradaSmjer;
-import edunova.model.Grupa;
 import edunova.model.Operater;
-import edunova.model.Polaznik;
 import edunova.model.Smjer;
 import edunova.util.EdunovaException;
-import edunova.util.HibernateUtil;
-import edunova.util.PocetniInsert;
-import edunova.view.Autorizacija;
 import edunova.view.SplashScreen;
 import java.util.List;
 
