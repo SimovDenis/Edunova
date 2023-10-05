@@ -353,7 +353,7 @@ public class ProzorSmjer extends javax.swing.JFrame implements EdunovaViewSucelj
             txtUpisnina.setText(df.format(0));
         }
 
-        chkVerificiran.setSelected(e.isVerificiran());
+        chkVerificiran.setSelected(e.getVerificiran());
 
     }
 

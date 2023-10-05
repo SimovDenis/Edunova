@@ -5,8 +5,10 @@
 package edunova.controller;
 
 import edunova.model.Osoba;
+import edunova.model.Predavac;
 import edunova.util.Alati;
 import edunova.util.EdunovaException;
+import java.util.List;
 import org.apache.commons.validator.routines.EmailValidator;
 
 /**

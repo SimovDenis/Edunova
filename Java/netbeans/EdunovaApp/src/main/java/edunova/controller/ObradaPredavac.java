@@ -55,7 +55,7 @@ public class ObradaPredavac extends ObradaOsoba<Predavac> {
         List<Predavac> lista = session.createQuery("from Predavac p where p.oib =:uvjet "
                 + " and p.sifra!=:sifra",Predavac.class)
                 .setParameter("uvjet", entitet.getOib())
-                .setParameter("sifra", entitet.getSifra())
+                .setParameter("sifra", entitet.getSifra()==null ? 0 : entitet.getSifra())
                 .list();
         
         if(lista!=null && !lista.isEmpty()){

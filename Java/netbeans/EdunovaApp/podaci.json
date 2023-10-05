@@ -1,0 +1,290 @@
+[
+  {
+    "naziv": "Java programiranje",
+    "smjer": {
+      "naziv": "Oaked Arrogant Bastard Ale",
+      "cijena": 998.00,
+      "upisnina": 100.00,
+      "trajanje": 343,
+      "verificiran": false,
+      "sifra": 6
+    },
+    "maxpolaznika": 16,
+    "predavac": {
+      "iban": "1212-1221-1121-1234",
+      "ime": "Emeline",
+      "prezime": "King",
+      "oib": "51654938212",
+      "email": "maryalice.gleason@hotmail.com",
+      "sifra": 5
+    },
+    "datumPocetka": "2018-11-28 07:09:02",
+    "polaznici": [
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "September",
+        "prezime": "Yost",
+        "oib": "19035768106",
+        "email": "norberto.ortiz@yahoo.com",
+        "sifra": 42
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Caroyln",
+        "prezime": "Hoppe",
+        "oib": "88913531384",
+        "email": "ann.ziemann@yahoo.com",
+        "sifra": 8312
+      },
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Curt",
+        "prezime": "Davis",
+        "oib": "47547201177",
+        "email": "emery.baumbach@hotmail.com",
+        "sifra": 6987
+      },
+      {
+        "brojUgovora": "1228-1221-1221-1431",
+        "ime": "Rona",
+        "prezime": "Weber",
+        "oib": "07417046144",
+        "email": "adelina.koss@gmail.com",
+        "sifra": 1295
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Victorina",
+        "prezime": "Orn",
+        "oib": "30798703611",
+        "email": "gidget.borer@gmail.com",
+        "sifra": 5334
+      }
+    ],
+    "sifra": 1
+  },
+  {
+    "naziv": "Web programiranje",
+    "smjer": {
+      "naziv": "Bourbon County Stout",
+      "cijena": 1543.00,
+      "upisnina": 109.00,
+      "trajanje": 292,
+      "verificiran": true,
+      "sifra": 7
+    },
+    "maxpolaznika": 8,
+    "predavac": {
+      "iban": "1234-2121-1221-1211",
+      "ime": "Jewel",
+      "prezime": "Carter",
+      "oib": "76416227092",
+      "email": "marcelino.haley@yahoo.com",
+      "sifra": 3
+    },
+    "datumPocetka": "2018-12-28 07:09:02",
+    "polaznici": [
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Harris",
+        "prezime": "Runolfsdottir",
+        "oib": "70809194061",
+        "email": "lia.vandervort@gmail.com",
+        "sifra": 1027
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Shavonda",
+        "prezime": "Boehm",
+        "oib": "91634505793",
+        "email": "donette.connelly@yahoo.com",
+        "sifra": 3215
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Larissa",
+        "prezime": "Haley",
+        "oib": "15523161418",
+        "email": "mitzi.jones@gmail.com",
+        "sifra": 6620
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Theo",
+        "prezime": "Hudson",
+        "oib": "52811638197",
+        "email": "kerry.tremblay@yahoo.com",
+        "sifra": 4870
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Lazaro",
+        "prezime": "Legros",
+        "oib": "61188393884",
+        "email": "theron.bayer@gmail.com",
+        "sifra": 7871
+      },
+      {
+        "brojUgovora": "1228-1221-1221-1431",
+        "ime": "Lona",
+        "prezime": "Schmeler",
+        "oib": "66207704884",
+        "email": "willis.satterfield@hotmail.com",
+        "sifra": 8887
+      }
+    ],
+    "sifra": 2
+  },
+  {
+    "naziv": "Serviser",
+    "smjer": {
+      "naziv": "Trappistes Rochefort 8",
+      "cijena": 1545.00,
+      "upisnina": 100.00,
+      "trajanje": 313,
+      "verificiran": true,
+      "sifra": 10
+    },
+    "maxpolaznika": 24,
+    "predavac": {
+      "iban": "1212-1221-1121-1234",
+      "ime": "Sally",
+      "prezime": "King",
+      "oib": "05666587262",
+      "email": "phuong.smith@gmail.com",
+      "sifra": 4
+    },
+    "datumPocetka": "2017-11-28 07:09:02",
+    "polaznici": [
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Emerson",
+        "prezime": "Smith",
+        "oib": "77547163712",
+        "email": "cristi.leuschke@yahoo.com",
+        "sifra": 8400
+      },
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Johnny",
+        "prezime": "Pouros",
+        "oib": "15161934967",
+        "email": "lesley.goyette@gmail.com",
+        "sifra": 2874
+      },
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Milford",
+        "prezime": "Simonis",
+        "oib": "23673429869",
+        "email": "dalton.kshlerin@gmail.com",
+        "sifra": 726
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Carroll",
+        "prezime": "Abernathy",
+        "oib": "55588608099",
+        "email": "shirley.damore@hotmail.com",
+        "sifra": 2010
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Cyrus",
+        "prezime": "Boyle",
+        "oib": "49057514462",
+        "email": "steven.legros@gmail.com",
+        "sifra": 1731
+      },
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Reed",
+        "prezime": "Hyatt",
+        "oib": "86884391969",
+        "email": "barney.okuneva@hotmail.com",
+        "sifra": 6839
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Elliot",
+        "prezime": "Cruickshank",
+        "oib": "71108646960",
+        "email": "kaylee.pagac@yahoo.com",
+        "sifra": 8035
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Lida",
+        "prezime": "Schamberger",
+        "oib": "86588367550",
+        "email": "doretta.wolff@yahoo.com",
+        "sifra": 6332
+      }
+    ],
+    "sifra": 3
+  },
+  {
+    "naziv": "Neki treći",
+    "smjer": {
+      "naziv": "Sierra Nevada Celebration Ale",
+      "cijena": 1506.00,
+      "upisnina": 96.00,
+      "trajanje": 182,
+      "verificiran": false,
+      "sifra": 9
+    },
+    "maxpolaznika": 6,
+    "predavac": {
+      "iban": "1212-1221-1121-1234",
+      "ime": "Emeline",
+      "prezime": "King",
+      "oib": "51654938212",
+      "email": "maryalice.gleason@hotmail.com",
+      "sifra": 5
+    },
+    "datumPocetka": "2018-07-28 07:09:02",
+    "polaznici": [
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Akilah",
+        "prezime": "Cruickshank",
+        "oib": "27256538858",
+        "email": "jene.dietrich@hotmail.com",
+        "sifra": 4629
+      },
+      {
+        "brojUgovora": "1212-1221-1121-1234",
+        "ime": "Kristopher",
+        "prezime": "Hermiston",
+        "oib": "70334668384",
+        "email": "alysia.williamson@hotmail.com",
+        "sifra": 1187
+      },
+      {
+        "brojUgovora": "1234-2121-1221-1211",
+        "ime": "Marianna",
+        "prezime": "Buckridge",
+        "oib": "01121592751",
+        "email": "dakota.okuneva@gmail.com",
+        "sifra": 6516
+      },
+      {
+        "brojUgovora": "1211-1221-1234-2201",
+        "ime": "Tyron",
+        "prezime": "Rodriguez",
+        "oib": "10065199293",
+        "email": "justin.wunsch@gmail.com",
+        "sifra": 3323
+      },
+      {
+        "brojUgovora": "1228-1221-1221-1431",
+        "ime": "Yong",
+        "prezime": "Cole",
+        "oib": "44092254425",
+        "email": "chance.ebert@hotmail.com",
+        "sifra": 1727
+      }
+    ],
+    "sifra": 4
+  }
+]
