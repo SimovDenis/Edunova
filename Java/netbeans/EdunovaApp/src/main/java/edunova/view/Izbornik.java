@@ -4,11 +4,22 @@
  */
 package edunova.view;
 
+import edunova.controller.ObradaSmjer;
+import edunova.model.StavkaGrafa;
 import edunova.util.Alati;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -23,8 +34,109 @@ public class Izbornik extends javax.swing.JFrame {
         initComponents();
         setTitle(Alati.NAZIV_APP + " | IZBORNIK" );
         lblOperater.setText(Alati.getOperater());
+        definirajGraf();
+        
+       // setSize(new Dimension(1020,800));
+       // setLocationRelativeTo(null);
+       
+        Dimension size 
+            = Toolkit.getDefaultToolkit().getScreenSize();
+        
+        Dimension velicina = new Dimension( (int) (size.getWidth()*0.75),(int)size.getHeight());
+        setSize(velicina);
+        setLocationRelativeTo(null);
+        /*
+        addComponentListener(new ComponentAdapter() 
+{  
+        public void componentResized(ComponentEvent evt) {
+            Component c = (Component)evt.getSource();
+            System.out.println(getSize().getWidth());
+            System.out.println(getSize().getHeight());
+                }
+        });
+        */
     }
 
+    
+    private void definirajGraf(){
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        long pocetak = System.currentTimeMillis();
+        List<StavkaGrafa> lista = new ArrayList<>();
+        /*
+        
+        
+        int ukupno;
+        for(Smjer s : new ObradaSmjer().read()){
+            ukupno=0;
+            for(Grupa g: s.getGrupe()){
+                ukupno+=g.getPolaznici().size();
+            }
+            if(ukupno==0){
+                continue;
+            }
+           // dataset.setValue(s.getNaziv() + " (" + ukupno + ")", ukupno);
+           lista.add(new StavkaGrafa(s.getNaziv() + " (" + ukupno + ")", ukupno));
+        }
+        
+        Collections.sort(lista, (new Comparator<StavkaGrafa>() {
+            public int compare(StavkaGrafa i1, StavkaGrafa i2) {
+                return i1.getBroj().compareTo(i2.getBroj());
+            }
+        }).reversed());
+        
+       
+        */
+        lista = new ObradaSmjer().grafIzbornik();
+         System.out.println(System.currentTimeMillis() - pocetak);
+        for(StavkaGrafa s : lista){
+            dataset.setValue(s.getNaziv() + " (" + s.getBroj() + ")" , s.getBroj());
+        }
+        
+        JFreeChart chart = ChartFactory.createPieChart("Broj polaznika po grupama", dataset,false,false,false);
+        
+        ChartPanel cp = new ChartPanel(chart);
+        
+        pnlGraf.setLayout(new BorderLayout());
+        pnlGraf.add(cp, BorderLayout.CENTER);
+        pnlGraf.validate();
+        
+    }
+    /*
+    public class StavkaGrafa implements Comparable<StavkaGrafa>{
+        private String naziv;
+        private Integer broj;
+
+        public StavkaGrafa(String naziv, Integer broj) {
+            this.naziv = naziv;
+            this.broj = broj;
+        }
+        
+        
+
+        public String getNaziv() {
+            return naziv;
+        }
+
+        public void setNaziv(String naziv) {
+            this.naziv = naziv;
+        }
+
+        public Integer getBroj() {
+            return broj;
+        }
+
+        public void setBroj(Integer broj) {
+            this.broj = broj;
+        }
+
+        @Override
+        public int compareTo(StavkaGrafa o) {
+           return getBroj()>o.getBroj() ? 1 : 0;
+        }
+        
+        
+    }
+    */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,6 +148,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         jToolBar1 = new javax.swing.JToolBar();
         lblOperater = new javax.swing.JLabel();
+        pnlGraf = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -45,11 +158,23 @@ public class Izbornik extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToolBar1.setRollover(true);
         jToolBar1.add(lblOperater);
+
+        javax.swing.GroupLayout pnlGrafLayout = new javax.swing.GroupLayout(pnlGraf);
+        pnlGraf.setLayout(pnlGrafLayout);
+        pnlGrafLayout.setHorizontalGroup(
+            pnlGrafLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlGrafLayout.setVerticalGroup(
+            pnlGrafLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 276, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("Programi");
 
@@ -105,6 +230,14 @@ public class Izbornik extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
+        jMenuItem7.setText("Kalendar");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem7);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -114,11 +247,13 @@ public class Izbornik extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(pnlGraf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 252, Short.MAX_VALUE)
+                .addComponent(pnlGraf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -156,6 +291,10 @@ public class Izbornik extends javax.swing.JFrame {
         new ProzorGrupa().setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        new ProzorKalendar().setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -168,7 +307,9 @@ public class Izbornik extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblOperater;
+    private javax.swing.JPanel pnlGraf;
     // End of variables declaration//GEN-END:variables
 }

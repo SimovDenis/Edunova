@@ -6,8 +6,11 @@ package edunova.controller;
 
 import edunova.model.Grupa;
 import edunova.model.Smjer;
+import edunova.model.StavkaGrafa;
 import edunova.util.EdunovaException;
+import edunova.view.Izbornik;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +33,26 @@ public class ObradaSmjer extends Obrada<Smjer>{
     public List<Smjer> read() {
         // HQL https://docs.jboss.org/hibernate/core/3.3/reference/en/html/queryhql.html
         return session.createQuery("from Smjer", Smjer.class).list();
+    }
+    
+  
+    public List<StavkaGrafa> grafIzbornik() {
+        
+        List<Object[]>  lista= session.createQuery(
+                "select smjer.naziv, count(polaznik.sifra) "
+                        + " from Grupa a inner join a.smjer as smjer "
+                        + " inner join a.polaznici as polaznik group by smjer.naziv "
+                        + " order by 2 desc", 
+                Object[].class).list();
+        List<StavkaGrafa> vrati = new ArrayList<>();
+        for(Object[] a : lista){
+            vrati.add(
+                    new StavkaGrafa(
+                            a[0].toString(),
+                            Integer.valueOf(a[1].toString())));
+        }
+        
+        return vrati;
     }
 
     @Override

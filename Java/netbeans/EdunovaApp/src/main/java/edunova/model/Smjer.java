@@ -23,6 +23,8 @@ public class Smjer extends Entitet {
     private Boolean verificiran;
     @OneToMany(mappedBy = "smjer")
     private List<Grupa> grupe = new ArrayList<>();
+    
+    private Integer brojGrupa;
 
     @Override
     public String toString() {
